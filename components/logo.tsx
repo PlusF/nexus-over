@@ -9,6 +9,7 @@ const ChakraBox = chakra(motion.div, {
 function AnimatedLogo() {
     const { scrollYProgress } = useScroll();
     const threshold = 0.1;
+    const shiftBox = useTransform(scrollYProgress, [0, threshold], [250, 10]);
     const shiftNe = useTransform(scrollYProgress, [0, threshold], [-205, -60]);
     const shiftXus = useTransform(scrollYProgress, [0, threshold], [-95, -60]);
     const shiftOX = useTransform(scrollYProgress, [0, threshold], [25, -45]);
@@ -22,7 +23,7 @@ function AnimatedLogo() {
         ['0px 0px 0px #000000', '0px 0px 5px #ffffff']
     );
     return (
-        <ChakraBox position="sticky" top={10}>
+        <ChakraBox position="sticky" top={10} style={{ translateY: shiftBox }}>
             <Link href="/">
                 <Box>
                     <ChakraBox
