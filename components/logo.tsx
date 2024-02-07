@@ -9,10 +9,11 @@ const ChakraBox = chakra(motion.div, {
 function AnimatedLogo() {
     const { scrollYProgress } = useScroll();
     const threshold = 0.1;
-    const shiftNe = useTransform(scrollYProgress, [0, threshold], [-240, -60]);
-    const shiftXus = useTransform(scrollYProgress, [0, threshold], [-130, -60]);
-    const shiftO = useTransform(scrollYProgress, [0, threshold], [35, -45]);
-    const shiftVer = useTransform(scrollYProgress, [0, threshold], [110, -45]);
+    const shiftNe = useTransform(scrollYProgress, [0, threshold], [-205, -60]);
+    const shiftXus = useTransform(scrollYProgress, [0, threshold], [-95, -60]);
+    const shiftOX = useTransform(scrollYProgress, [0, threshold], [25, -45]);
+    const shiftOY = useTransform(scrollYProgress, [0, threshold], [-22, -18]);
+    const shiftVer = useTransform(scrollYProgress, [0, threshold], [100, -45]);
     const colorNe = useTransform(scrollYProgress, [0, threshold], ['#ffffff', '#000000']);
     const colorUsVer = useTransform(scrollYProgress, [0, threshold], ['#ffffffff', '#00000000']);
     const shadowNe = useTransform(
@@ -21,13 +22,13 @@ function AnimatedLogo() {
         ['0px 0px 0px #000000', '0px 0px 5px #ffffff']
     );
     return (
-        <ChakraBox position="sticky" top={10}>
+        <ChakraBox position="sticky" top={20}>
             <Link href="/">
                 <Box>
                     <ChakraBox
                         style={{
-                            translateX: shiftO,
-                            translateY: -18,
+                            translateX: shiftOX,
+                            translateY: shiftOY,
                         }}
                         position="absolute"
                         color="white"
@@ -38,7 +39,6 @@ function AnimatedLogo() {
                     <ChakraBox
                         style={{
                             translateX: shiftVer,
-                            translateY: 7,
                             color: colorUsVer,
                         }}
                         position="absolute"

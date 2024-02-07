@@ -8,9 +8,12 @@ const theme = extendTheme({
     },
     styles: {
         global: {
+            html: {
+                overflowX: 'clip',
+            },
             body: {
                 bg: '#333333',
-                overflowX: 'hidden',
+                overflowX: 'clip',
             },
         },
     },
