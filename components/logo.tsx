@@ -9,10 +9,10 @@ const ChakraBox = chakra(motion.div, {
 function AnimatedLogo() {
     const { scrollYProgress } = useScroll();
     const threshold = 0.1;
-    const shiftNe = useTransform(scrollYProgress, [0, threshold], [-260, -60]);
-    const shiftXus = useTransform(scrollYProgress, [0, threshold], [-150, -60]);
-    const shiftO = useTransform(scrollYProgress, [0, threshold], [55, -45]);
-    const shiftVer = useTransform(scrollYProgress, [0, threshold], [130, -45]);
+    const shiftNe = useTransform(scrollYProgress, [0, threshold], [-240, -60]);
+    const shiftXus = useTransform(scrollYProgress, [0, threshold], [-130, -60]);
+    const shiftO = useTransform(scrollYProgress, [0, threshold], [35, -45]);
+    const shiftVer = useTransform(scrollYProgress, [0, threshold], [110, -45]);
     const colorNe = useTransform(scrollYProgress, [0, threshold], ['#ffffff', '#000000']);
     const colorUsVer = useTransform(scrollYProgress, [0, threshold], ['#ffffffff', '#00000000']);
     const shadowNe = useTransform(
