@@ -22,7 +22,7 @@ function AnimatedLogo() {
         ['0px 0px 0px #000000', '0px 0px 5px #ffffff']
     );
     return (
-        <ChakraBox position="sticky" top={20}>
+        <ChakraBox position="sticky" top={10}>
             <Link href="/">
                 <Box>
                     <ChakraBox

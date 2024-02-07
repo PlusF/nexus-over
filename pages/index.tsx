@@ -11,8 +11,8 @@ export default function Home() {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <Box h={300}></Box>
             <AnimatedLogo />
+            <Box h={300}></Box>
             <Box h={5000}></Box>
         </Box>
     );
