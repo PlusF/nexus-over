@@ -29,7 +29,7 @@ export default function Concept() {
                     <Heading fontSize="md" mt="2">
                         Kakato
                     </Heading>
-                    <Box fontSize="sm" ml="5" mb="10">
+                    <Box fontSize="sm" ml="5">
                         <Text>自分のプロップスと</Text>
                         <Text>WISHのカラーとの調和</Text>
                         <Text>試行錯誤した答え</Text>
