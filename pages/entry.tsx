@@ -1,7 +1,25 @@
 import { SimpleBox } from '@/components/box';
-import { BackLinkBox } from '@/components/linkbox';
+import { BackLinkBox, BaseLinkBox } from '@/components/linkbox';
 import { NormalLogo } from '@/components/logo';
-import { Box, Button, Grid, GridItem, Heading, Input, Select, Text } from '@chakra-ui/react';
+import {
+    Box,
+    Button,
+    Grid,
+    GridItem,
+    Heading,
+    Input,
+    Modal,
+    ModalBody,
+    ModalCloseButton,
+    ModalContent,
+    ModalFooter,
+    ModalHeader,
+    ModalOverlay,
+    Select,
+    Text,
+    useDisclosure,
+} from '@chakra-ui/react';
+import Link from 'next/link';
 import { Dispatch, SetStateAction, useState } from 'react';
 
 function EntrySelect(props: {
@@ -61,13 +79,51 @@ function Description(props: { text: string }) {
     );
 }
 
-function SubmitButton(props: { text: string; onClick: () => void }) {
+function SubmitButton(props: { text: string; onClick: () => void; isLoading?: boolean }) {
     return (
         <GridItem colSpan={2} textAlign="center" mt="5">
-            <Button size="lg" colorScheme="gray" onClick={props.onClick}>
+            <Button
+                size="lg"
+                colorScheme="gray"
+                onClick={props.onClick}
+                isLoading={props.isLoading}
+            >
                 {props.text}
             </Button>
         </GridItem>
+    );
+}
+
+function SuccessModal(props: {
+    isOpen: boolean;
+    onClose: () => void;
+    content: string;
+    apply: string;
+}) {
+    return (
+        <Modal isOpen={props.isOpen} onClose={props.onClose} size="sm">
+            <ModalOverlay />
+            <ModalContent>
+                <ModalHeader>{props.apply}完了</ModalHeader>
+                <ModalCloseButton />
+                <ModalBody>
+                    {props.content}の{props.apply}ありがとうございます。
+                    当日会場にて料金をお支払いください。
+                </ModalBody>
+
+                <ModalFooter gap={2}>
+                    <Button variant="outline" as={Link} href={'/entrylist'}>
+                        Entry List
+                    </Button>
+                    <Button variant="outline" as={Link} href={'/'}>
+                        Home
+                    </Button>
+                    <Button colorScheme="gray" mr={3} onClick={props.onClose}>
+                        Close
+                    </Button>
+                </ModalFooter>
+            </ModalContent>
+        </Modal>
     );
 }
 
@@ -78,17 +134,29 @@ function BattleEntry() {
     const genres = ['Hiphop', 'Pop', 'Lock', 'Breaking', 'House', 'Jazz', 'Freestyle'];
     const [name, setName] = useState<string>('');
     const [dancerName, setDancerName] = useState<string>('');
+    const { isOpen, onOpen, onClose } = useDisclosure();
+    const [isLoading, setIsLoading] = useState<boolean>(false);
 
-    function handleEntry() {
+    async function handleEntry() {
         try {
             if (!generation || !genre || !name || !dancerName) {
-                throw new Error('Please fill in all fields');
+                throw new Error('未入力の項目があります。全ての項目を入力してください。');
             }
+            setIsLoading(true);
+            const res = await fetch('/api/battle', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ generation, genre, name, dancerName }),
+            });
+            const data = await res.json();
+            setIsLoading(false);
+            onOpen();
         } catch (error) {
             alert(error);
             return;
         }
-        console.log(generation, genre, name, dancerName);
     }
     return (
         <SimpleBox title="Battle Entry">
@@ -98,8 +166,9 @@ function BattleEntry() {
                 <EntryInput title="名前" value={name} onChange={setName} />
                 <EntryInput title="ダンサー名" value={dancerName} onChange={setDancerName} />
                 <Description text="※エントリー料2000円+One Drink" />
-                <SubmitButton text="Entry" onClick={handleEntry} />
+                <SubmitButton text="Entry" onClick={handleEntry} isLoading={isLoading} />
             </Grid>
+            <SuccessModal isOpen={isOpen} onClose={onClose} content="バトル" apply="エントリー" />
         </SimpleBox>
     );
 }
@@ -110,17 +179,29 @@ function AudienceEntry() {
     const [genre, setGenre] = useState<string>('');
     const genres = ['Hiphop', 'Pop', 'Lock', 'Breaking', 'House', 'Jazz', 'Freestyle'];
     const [name, setName] = useState<string>('');
+    const { isOpen, onOpen, onClose } = useDisclosure();
+    const [isLoading, setIsLoading] = useState<boolean>(false);
 
-    function handleEntry() {
+    async function handleEntry() {
         try {
             if (!generation || !genre || !name) {
-                throw new Error('Please fill in all fields');
+                throw new Error('未入力の項目があります。全ての項目を入力してください。');
             }
+            setIsLoading(true);
+            const res = await fetch('/api/audience', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ generation, genre, name }),
+            });
+            const data = await res.json();
+            setIsLoading(false);
+            onOpen();
         } catch (error) {
             alert(error);
             return;
         }
-        console.log(generation, genre, name);
     }
     return (
         <SimpleBox title="観覧申込">
@@ -129,8 +210,9 @@ function AudienceEntry() {
                 <EntrySelect title="ジャンル" options={genres} onChange={setGenre} />
                 <EntryInput title="名前" value={name} onChange={setName} />
                 <Description text="※観覧料1000円+One Drink" />
-                <SubmitButton text="申込" onClick={handleEntry} />
+                <SubmitButton text="申込" onClick={handleEntry} isLoading={isLoading} />
             </Grid>
+            <SuccessModal isOpen={isOpen} onClose={onClose} content="NExus Over" apply="観覧申込" />
         </SimpleBox>
     );
 }
@@ -138,12 +220,11 @@ function AudienceEntry() {
 export default function Entry() {
     return (
         <>
-            <Box>
-                <NormalLogo />
-                <Box h={100}></Box>
-                <BattleEntry />
-                <AudienceEntry />
-            </Box>
+            <NormalLogo />
+            <Box h={100}></Box>
+            <BattleEntry />
+            <AudienceEntry />
+            <BaseLinkBox href="/entrylist" linkText="Entry List &rarr;"></BaseLinkBox>
             <BackLinkBox />
         </>
     );
