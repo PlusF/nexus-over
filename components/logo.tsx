@@ -1,6 +1,7 @@
-import { Box, Center, chakra, shouldForwardProp } from '@chakra-ui/react';
-import { isValidMotionProp, motion, useScroll, useTransform } from 'framer-motion';
+import { Box, Center } from '@chakra-ui/react';
+import { useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
+import { ChakraBox } from './motion';
 
 function NormalLogo() {
     return (
@@ -23,10 +24,6 @@ function NormalLogo() {
         </Box>
     );
 }
-
-const ChakraBox = chakra(motion.div, {
-    shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
-});
 
 function AnimatedLogo() {
     const { scrollYProgress } = useScroll();

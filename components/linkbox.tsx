@@ -1,26 +1,55 @@
-import { Box, Center, LinkBox, LinkOverlay } from '@chakra-ui/react';
+import { Box, Heading, LinkBox, LinkOverlay } from '@chakra-ui/react';
 import Link from 'next/link';
+import { ScrollOnce } from './motion';
 
-function BaseLinkBox(props: { href: string; children?: React.ReactNode; linkText: string }) {
+function BaseLinkBox(props: {
+    href: string;
+    linkText: string;
+    width?: string;
+    children?: React.ReactNode;
+}) {
     const href = props.href;
+    const width = props.width || undefined;
     return (
         <LinkBox
             as="article"
             color="black"
-            background="#ffffff88"
+            background="#ffffffbb"
             px="5"
             m="10"
-            borderWidth="1px"
-            rounded="md"
+            width={width}
+            maxWidth="600"
         >
-            <Box my="5">{props.children}</Box>
-            <Center my="2" fontSize="lg">
+            {props.children}
+            <Box mt="2" fontSize="lg" textAlign="right">
                 <LinkOverlay as={Link} href={href}>
                     {props.linkText}
                 </LinkOverlay>
-            </Center>
+            </Box>
         </LinkBox>
     );
 }
 
-export default BaseLinkBox;
+function BackLinkBox(props: { href?: string }) {
+    const href = props.href || '/';
+    return <BaseLinkBox href={href} linkText="&larr; Back" />;
+}
+
+function HomeLinkBox(props: {
+    href: string;
+    linkText?: string;
+    title: string;
+    children: React.ReactNode;
+}) {
+    const linkText = props.linkText || 'Read more';
+    return (
+        <ScrollOnce>
+            <BaseLinkBox href={props.href} linkText={'→' + linkText} width="80%">
+                <Heading pt="5">{props.title}</Heading>
+                {props.children}
+            </BaseLinkBox>
+        </ScrollOnce>
+    );
+}
+
+export { BackLinkBox, BaseLinkBox, HomeLinkBox };

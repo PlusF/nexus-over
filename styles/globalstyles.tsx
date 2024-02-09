@@ -3,7 +3,7 @@ import '@fontsource/jomolhari';
 
 const theme = extendTheme({
     fonts: {
-        heading: ``,
+        heading: `'Jomolhari', serif`,
         body: `'Jomolhari', serif`,
     },
     styles: {
@@ -14,6 +14,7 @@ const theme = extendTheme({
             body: {
                 bg: '#333333',
                 overflowX: 'clip',
+                // textAlign: 'center',
             },
         },
     },
