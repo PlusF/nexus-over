@@ -16,12 +16,8 @@ export default function Home() {
             <Box h={600}></Box>
 
             <HomeLinkBox href="/concept" title="Concept">
-                <Box my="2" fontSize="md">
-                    （仮）新感覚イベント
-                </Box>
-                <Box fontSize="sm">
-                    （仮）WISHの歴史の深さを体感 ストリートダンスシーンへの進出のきっかけ
-                    熱量の底上げ
+                <Box my="2" fontSize="sm">
+                    今までにない感覚を、WISHのイベントで。
                 </Box>
             </HomeLinkBox>
 
@@ -74,7 +70,7 @@ export default function Home() {
                 </Heading>
             </HomeLinkBox>
 
-            <Box h={200}></Box>
+            <Box h={100}></Box>
         </>
     );
 }

@@ -5,7 +5,7 @@ import { ChakraBox } from './motion';
 
 function NormalLogo() {
     return (
-        <Box position="sticky" top={20} zIndex="docked">
+        <Box position="sticky" top={12} zIndex="docked">
             <Link href="/">
                 <Center>
                     <Box position="absolute" fontSize="8xl" color="white">

@@ -21,7 +21,7 @@ function BaseLinkBox(props: {
             maxWidth="600"
         >
             {props.children}
-            <Box mt="2" fontSize="lg" textAlign="right">
+            <Box fontSize="lg" textAlign="right">
                 <LinkOverlay as={Link} href={href}>
                     {props.linkText}
                 </LinkOverlay>
@@ -43,8 +43,8 @@ function HomeLinkBox(props: {
 }) {
     const linkText = props.linkText || 'Read more';
     return (
-        <ScrollOnce>
-            <BaseLinkBox href={props.href} linkText={'→' + linkText} width="80%">
+        <ScrollOnce enableTap>
+            <BaseLinkBox href={props.href} linkText={'→ ' + linkText} width="80%">
                 <Heading pt="5">{props.title}</Heading>
                 {props.children}
             </BaseLinkBox>
