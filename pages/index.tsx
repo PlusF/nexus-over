@@ -74,7 +74,7 @@ export default function Home() {
                 </Heading>
             </HomeLinkBox>
 
-            <Box h={1000}></Box>
+            <Box h={200}></Box>
         </>
     );
 }

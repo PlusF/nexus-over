@@ -27,7 +27,7 @@ function NormalLogo() {
 
 function AnimatedLogo() {
     const { scrollYProgress } = useScroll();
-    const threshold = 0.1;
+    const threshold = 0.2;
     const shiftBox = useTransform(scrollYProgress, [0, threshold], [250, 0]);
     const shiftNe = useTransform(scrollYProgress, [0, threshold], [-205, -54]);
     const shiftXus = useTransform(scrollYProgress, [0, threshold], [-95, -60]);
