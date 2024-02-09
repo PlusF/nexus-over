@@ -16,10 +16,10 @@ export default function Home() {
             <Box h={600}></Box>
 
             <HomeLinkBox href="/concept" title="Concept">
-                <Box my="2" fontSize="lg">
+                <Box my="2" fontSize="md">
                     （仮）新感覚イベント
                 </Box>
-                <Box fontSize="md">
+                <Box fontSize="sm">
                     （仮）WISHの歴史の深さを体感 ストリートダンスシーンへの進出のきっかけ
                     熱量の底上げ
                 </Box>
@@ -32,7 +32,7 @@ export default function Home() {
                 <Heading fontSize="md" mt="2">
                     on 2024/6/1(Sat.)
                 </Heading>
-                <Box fontSize="md" mt="2">
+                <Box fontSize="sm" mt="2">
                     タイムテーブルもこちらから
                 </Box>
             </HomeLinkBox>
@@ -41,12 +41,12 @@ export default function Home() {
                 <Heading fontSize="md" mt="2">
                     Judges
                 </Heading>
-                <Box>U-ki the retro (Bixbite/GRAYSOURCE)</Box>
-                <Box>RiN. (Novel Nextus/fidi)</Box>
+                <Box fontSize="sm">U-ki the retro (Bixbite/GRAYSOURCE)</Box>
+                <Box fontSize="sm">RiN. (Novel Nextus/fidi)</Box>
                 <Heading fontSize="md" mt="2">
                     DJ
                 </Heading>
-                <Box>OnokUro (Mnchr-m)</Box>
+                <Box fontSize="sm">OnokUro (Mnchr-m)</Box>
             </HomeLinkBox>
 
             <HomeLinkBox href="/contents" title="Contents">
