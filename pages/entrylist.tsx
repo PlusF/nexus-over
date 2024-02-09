@@ -1,6 +1,7 @@
 import { SimpleBox } from '@/components/box';
 import { BackLinkBox } from '@/components/linkbox';
-import { Grid, GridItem } from '@chakra-ui/react';
+import { NormalLogo } from '@/components/logo';
+import { Box, Grid, GridItem } from '@chakra-ui/react';
 import { AudienceEntry, BattleEntry } from '@prisma/client';
 
 type EntryListProps = {
@@ -11,6 +12,8 @@ type EntryListProps = {
 export default function BattleEntryList(props: EntryListProps) {
     return (
         <>
+            <NormalLogo />
+            <Box h={100}></Box>
             <SimpleBox title="Battle Entry List">
                 <Grid templateColumns="repeat(3, 1fr)" gap="1" mt="5">
                     {props.battleEntries.map((entry: any) => (
