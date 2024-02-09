@@ -18,13 +18,13 @@ export default function BattleEntryList(props: EntryListProps) {
                 <Grid templateColumns="repeat(3, 1fr)" gap="1" mt="5">
                     {props.battleEntries.map((entry: any) => (
                         <>
-                            <GridItem key={entry.id} colSpan={1}>
+                            <GridItem key={entry.id + 'generation'} colSpan={1}>
                                 {entry.generation}
                             </GridItem>
-                            <GridItem key={entry.id} colSpan={1}>
+                            <GridItem key={entry.id + 'genre'} colSpan={1}>
                                 {entry.genre}
                             </GridItem>
-                            <GridItem key={entry.id} colSpan={1}>
+                            <GridItem key={entry.id + 'dancerName'} colSpan={1}>
                                 {entry.dancerName}
                             </GridItem>
                         </>
@@ -35,13 +35,13 @@ export default function BattleEntryList(props: EntryListProps) {
                 <Grid templateColumns="repeat(3, 1fr)" gap="1" mt="5">
                     {props.audienceEntries.map((entry: any) => (
                         <>
-                            <GridItem key={entry.id} colSpan={1}>
+                            <GridItem key={entry.id + 'generation'} colSpan={1}>
                                 {entry.generation}
                             </GridItem>
-                            <GridItem key={entry.id} colSpan={1}>
+                            <GridItem key={entry.id + 'genre'} colSpan={1}>
                                 {entry.genre}
                             </GridItem>
-                            <GridItem key={entry.id} colSpan={1}>
+                            <GridItem key={entry.id + 'name'} colSpan={1}>
                                 {entry.name}
                             </GridItem>
                         </>
