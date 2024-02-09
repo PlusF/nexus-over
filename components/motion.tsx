@@ -42,7 +42,6 @@ function ScrollOnce(props: { children: React.ReactNode }) {
             style={{ width: '100%', height: '100%' }}
             whileTap="tap"
             whileHover="hover"
-            // variants={cardVariants}
         >
             <motion.div variants={cardVariants}>{props.children}</motion.div>
         </motion.div>
