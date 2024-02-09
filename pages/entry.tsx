@@ -111,14 +111,14 @@ function SuccessModal(props: {
                     当日会場にて料金をお支払いください。
                 </ModalBody>
 
-                <ModalFooter gap={2}>
+                <ModalFooter gap="2">
                     <Button variant="outline" as={Link} href={'/entrylist'}>
                         Entry List
                     </Button>
                     <Button variant="outline" as={Link} href={'/'}>
                         Home
                     </Button>
-                    <Button colorScheme="gray" mr={3} onClick={props.onClose}>
+                    <Button mr={3} onClick={props.onClose}>
                         Close
                     </Button>
                 </ModalFooter>
@@ -155,6 +155,7 @@ function BattleEntry() {
             onOpen();
         } catch (error) {
             alert(error);
+            setIsLoading(false);
             return;
         }
     }
@@ -200,6 +201,7 @@ function AudienceEntry() {
             onOpen();
         } catch (error) {
             alert(error);
+            setIsLoading(false);
             return;
         }
     }
@@ -212,7 +214,7 @@ function AudienceEntry() {
                 <Description text="※観覧料1000円+One Drink" />
                 <SubmitButton text="申込" onClick={handleEntry} isLoading={isLoading} />
             </Grid>
-            <SuccessModal isOpen={isOpen} onClose={onClose} content="NExus Over" apply="観覧申込" />
+            <SuccessModal isOpen={isOpen} onClose={onClose} content="イベント観覧" apply="申込" />
         </SimpleBox>
     );
 }
@@ -220,11 +222,13 @@ function AudienceEntry() {
 export default function Entry() {
     return (
         <>
-            <NormalLogo />
-            <Box h={100}></Box>
-            <BattleEntry />
-            <AudienceEntry />
-            <BaseLinkBox href="/entrylist" linkText="Entry List &rarr;"></BaseLinkBox>
+            <Box>
+                <NormalLogo />
+                <Box h={100}></Box>
+                <BattleEntry />
+                <AudienceEntry />
+            </Box>
+            <BaseLinkBox href="/entrylist" linkText="Entry List &rarr;" />
             <BackLinkBox />
         </>
     );
