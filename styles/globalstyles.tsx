@@ -3,8 +3,8 @@ import '@fontsource/jomolhari';
 
 const theme = extendTheme({
     fonts: {
-        heading: `'Jomolhari', serif`,
-        body: `'Jomolhari', sans-serif`,
+        heading: ``,
+        body: `'Jomolhari', serif`,
     },
     styles: {
         global: {

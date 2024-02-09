@@ -1,6 +1,28 @@
-import { Box, chakra, shouldForwardProp } from '@chakra-ui/react';
+import { Box, Center, chakra, shouldForwardProp } from '@chakra-ui/react';
 import { isValidMotionProp, motion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
+
+function NormalLogo() {
+    return (
+        <Box position="sticky" top={20} zIndex="docked">
+            <Link href="/">
+                <Center>
+                    <Box position="absolute" fontSize="8xl" color="white">
+                        O
+                    </Box>
+                    <Box
+                        position="absolute"
+                        fontSize="7xl"
+                        color="black"
+                        textShadow="0px 0px 5px #ffffff"
+                    >
+                        NE
+                    </Box>
+                </Center>
+            </Link>
+        </Box>
+    );
+}
 
 const ChakraBox = chakra(motion.div, {
     shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
@@ -9,10 +31,10 @@ const ChakraBox = chakra(motion.div, {
 function AnimatedLogo() {
     const { scrollYProgress } = useScroll();
     const threshold = 0.1;
-    const shiftBox = useTransform(scrollYProgress, [0, threshold], [250, 10]);
-    const shiftNe = useTransform(scrollYProgress, [0, threshold], [-205, -60]);
+    const shiftBox = useTransform(scrollYProgress, [0, threshold], [250, 0]);
+    const shiftNe = useTransform(scrollYProgress, [0, threshold], [-205, -54]);
     const shiftXus = useTransform(scrollYProgress, [0, threshold], [-95, -60]);
-    const shiftOX = useTransform(scrollYProgress, [0, threshold], [25, -45]);
+    const shiftOX = useTransform(scrollYProgress, [0, threshold], [25, -39]);
     const shiftOY = useTransform(scrollYProgress, [0, threshold], [-22, -18]);
     const shiftVer = useTransform(scrollYProgress, [0, threshold], [100, -45]);
     const colorNe = useTransform(scrollYProgress, [0, threshold], ['#ffffff', '#000000']);
@@ -23,7 +45,7 @@ function AnimatedLogo() {
         ['0px 0px 0px #000000', '0px 0px 5px #ffffff']
     );
     return (
-        <ChakraBox position="sticky" top={10} style={{ translateY: shiftBox }}>
+        <ChakraBox position="sticky" top={7} style={{ translateY: shiftBox }} zIndex="docked">
             <Link href="/">
                 <Box>
                     <ChakraBox
@@ -74,4 +96,4 @@ function AnimatedLogo() {
     );
 }
 
-export { AnimatedLogo };
+export { AnimatedLogo, NormalLogo };

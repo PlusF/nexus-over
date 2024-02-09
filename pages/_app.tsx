@@ -6,7 +6,7 @@ import type { AppProps } from 'next/app';
 export default function App({ Component, pageProps }: AppProps) {
     return (
         <ChakraProvider theme={theme}>
-            <Box bgImg="url('NEO.svg')" backgroundRepeat={'repeat'}>
+            <Box bgImg="url('NEO.svg')" backgroundRepeat={'repeat'} backgroundPosition={'center'}>
                 <Center>
                     <VStack>
                         <Component {...pageProps} />
