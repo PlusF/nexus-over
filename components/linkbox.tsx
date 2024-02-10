@@ -45,8 +45,8 @@ function HomeLinkBox(props: {
     const linkText = props.linkText || 'Read more';
     return (
         <ScrollOnce enableTap>
-            <BaseLinkBox href={props.href} linkText={'→ ' + linkText} width="80%">
-                <Heading pt="5">{props.title}</Heading>
+            <BaseLinkBox href={props.href} linkText={'→ ' + linkText} width="90%">
+                <Heading>{props.title}</Heading>
                 {props.children}
             </BaseLinkBox>
         </ScrollOnce>

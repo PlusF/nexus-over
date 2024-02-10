@@ -22,7 +22,7 @@ function BaseBox(props: { width?: string; children?: React.ReactNode }) {
 function SimpleBox(props: { title: string; children: React.ReactNode }) {
     return (
         <ScrollOnce>
-            <BaseBox width="80%">
+            <BaseBox width="90%">
                 <Heading>{props.title}</Heading>
                 {props.children}
             </BaseBox>

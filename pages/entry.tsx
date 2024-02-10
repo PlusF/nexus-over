@@ -132,7 +132,7 @@ function BattleEntry() {
     const [generation, setGeneration] = useState<string>('');
     const generations = [...Array(45)].map((_, i) => String(i + 1));
     const [genre, setGenre] = useState<string>('');
-    const genres = ['Hiphop', 'Pop', 'Lock', 'Breaking', 'House', 'Jazz', 'Freestyle'];
+    const genres = ['Hiphop', 'Pop', 'Lock', 'Breaking', 'House', 'Jazz', 'Waack', 'Freestyle'];
     const [name, setName] = useState<string>('');
     const [dancerName, setDancerName] = useState<string>('');
     const { isOpen, onOpen, onClose } = useDisclosure();
@@ -185,7 +185,7 @@ function AudienceEntry() {
     const [generation, setGeneration] = useState<string>('');
     const generations = [...Array(45)].map((_, i) => String(i + 1));
     const [genre, setGenre] = useState<string>('');
-    const genres = ['Hiphop', 'Pop', 'Lock', 'Breaking', 'House', 'Jazz', 'Freestyle'];
+    const genres = ['Hiphop', 'Pop', 'Lock', 'Breaking', 'House', 'Jazz', 'Waack'];
     const [name, setName] = useState<string>('');
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [isLoading, setIsLoading] = useState<boolean>(false);
