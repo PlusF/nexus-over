@@ -71,10 +71,10 @@ function EntryInput(props: {
     );
 }
 
-function Description(props: { text: string }) {
+function Description(props: { children?: React.ReactNode }) {
     return (
         <GridItem colSpan={2} textAlign="center" mt="5">
-            <Text fontSize="sm">{props.text}</Text>
+            <Text fontSize="sm">{props.children}</Text>
         </GridItem>
     );
 }
@@ -167,7 +167,15 @@ function BattleEntry() {
                 <EntrySelect title="ジャンル" options={genres} onChange={setGenre} />
                 <EntryInput title="名前" value={name} onChange={setName} />
                 <EntryInput title="ダンサー名" value={dancerName} onChange={setDancerName} />
-                <Description text="※エントリー料2500円+One Drink" />
+                <Description>
+                    <Text fontSize="sm" textAlign="left" ml="5">
+                        ※エントリー料2500円+One Drink
+                        <br />
+                        ※エントリー上限：50枠
+                        <br />
+                        ※枠が埋まるとキャンセル待ちとなります。
+                    </Text>
+                </Description>
                 <SubmitButton text="Entry" onClick={handleEntry} isLoading={isLoading} />
             </Grid>
             <SuccessModal
@@ -218,7 +226,15 @@ function AudienceEntry() {
                 <EntrySelect title="代" options={generations} onChange={setGeneration} />
                 <EntrySelect title="ジャンル" options={genres} onChange={setGenre} />
                 <EntryInput title="名前" value={name} onChange={setName} />
-                <Description text="※観覧料1000円+One Drink" />
+                <Description>
+                    <Text fontSize="sm" textAlign="left" ml="5">
+                        ※観覧料1000円+One Drink
+                        <br />
+                        ※観覧上限：20枠
+                        <br />
+                        ※枠が埋まるとキャンセル待ちとなります。
+                    </Text>
+                </Description>
                 <SubmitButton text="申込" onClick={handleEntry} isLoading={isLoading} />
             </Grid>
             <SuccessModal
