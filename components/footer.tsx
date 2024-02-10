@@ -1,5 +1,5 @@
-import { Box, Center, HStack, IconButton, Text } from '@chakra-ui/react';
-import { FiInstagram } from 'react-icons/fi';
+import { Box, Center, HStack, Text } from '@chakra-ui/react';
+import InstagramButton from './instagram';
 
 const boxStyle = {
     backgroundColor: '#111',
@@ -9,24 +9,13 @@ const boxStyle = {
     padding: '0.8rem',
 };
 
-function openInstagram() {
-    window.open(
-        'https://www.instagram.com/neo_wish?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=='
-    );
-}
-
 export default function Footer() {
     return (
         <Box sx={boxStyle}>
             <Center>
                 <HStack>
                     <Text>Contact &rarr;</Text>
-                    <IconButton
-                        colorScheme="black"
-                        aria-label="Open Instagram"
-                        icon={<FiInstagram />}
-                        onClick={openInstagram}
-                    />
+                    <InstagramButton url="https://www.instagram.com/neo_wish/" color="white" />
                 </HStack>
             </Center>
         </Box>

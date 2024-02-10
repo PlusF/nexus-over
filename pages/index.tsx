@@ -13,7 +13,11 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <AnimatedLogo />
-            <Box h={600}></Box>
+            <Box h={400}></Box>
+            <Heading fontSize="lg" fontWeight="100" color="white">
+                2024/6/1(Sat.) @六本木CUBE
+            </Heading>
+            <Box h={200}></Box>
 
             <HomeLinkBox href="/concept" title="Concept">
                 <Box my="2" fontSize="sm">
@@ -25,9 +29,7 @@ export default function Home() {
                 <Heading fontSize="md" mt="2">
                     六本木CUBE
                 </Heading>
-                <Heading fontSize="md" mt="2">
-                    on 2024/6/1(Sat.)
-                </Heading>
+                <Heading fontSize="md">2024/6/1(Sat.)</Heading>
                 <Box fontSize="sm" mt="2">
                     タイムテーブルもこちらから
                 </Box>

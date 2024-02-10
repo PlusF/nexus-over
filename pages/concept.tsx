@@ -1,4 +1,5 @@
 import { SimpleBox } from '@/components/box';
+import InstagramButton from '@/components/instagram';
 import { BackLinkBox } from '@/components/linkbox';
 import { NormalLogo } from '@/components/logo';
 import { Box, Center, Heading, Image, Text, VStack } from '@chakra-ui/react';
@@ -44,8 +45,11 @@ export default function Concept() {
                 </SimpleBox>
                 <SimpleBox title="Message">
                     <Image src="kakato.jpg" alt="kakato" />
-                    <Heading fontSize="md" mt="2">
-                        Kakato
+                    <Heading fontSize="md" mt="1">
+                        <Text as="span" fontWeight="900">
+                            Kakato
+                        </Text>
+                        <InstagramButton url="https://www.instagram.com/k_t_w_l/" />
                     </Heading>
                     <Box fontSize="sm" ml="5">
                         <Text>「WISHを変えられる」</Text>
@@ -64,8 +68,11 @@ export default function Concept() {
                 </SimpleBox>
                 <SimpleBox title="Message">
                     <Image src="rol.jpg" alt="rol" />
-                    <Heading fontSize="md" mt="2">
-                        ROL
+                    <Heading fontSize="md" mt="1">
+                        <Text as="span" fontWeight="900">
+                            ROL
+                        </Text>
+                        <InstagramButton url="https://www.instagram.com/rol_rlasic/" />
                     </Heading>
                     <Box fontSize="sm" ml="5">
                         <Text>
