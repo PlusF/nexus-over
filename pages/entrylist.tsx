@@ -63,6 +63,8 @@ export async function getServerSideProps(context: any) {
         const audienceEntries = await fetch(`${protocol}://${host}/api/audience`).then((data) =>
             data.json()
         );
+        console.log(battleEntries);
+        console.log(audienceEntries);
         return {
             props: {
                 battleEntries: battleEntries,
