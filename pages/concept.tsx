@@ -1,33 +1,7 @@
 import { SimpleBox } from '@/components/box';
 import { BackLinkBox } from '@/components/linkbox';
 import { NormalLogo } from '@/components/logo';
-import {
-    Accordion,
-    AccordionButton,
-    AccordionIcon,
-    AccordionItem,
-    AccordionPanel,
-    Box,
-    Heading,
-    Image,
-    Text,
-} from '@chakra-ui/react';
-
-function ConceptItem(props: { title: string; children: string }) {
-    return (
-        <AccordionItem>
-            <Heading fontSize="md" mt="2">
-                <AccordionButton _expanded={{ bg: 'black', color: 'white' }}>
-                    <Box as="span" flex="1" textAlign="left">
-                        {props.title}
-                    </Box>
-                    <AccordionIcon />
-                </AccordionButton>
-            </Heading>
-            <AccordionPanel pb={4}>{props.children}</AccordionPanel>
-        </AccordionItem>
-    );
-}
+import { Box, Center, Heading, Image, Text, VStack } from '@chakra-ui/react';
 
 export default function Concept() {
     return (
@@ -36,24 +10,37 @@ export default function Concept() {
                 <NormalLogo />
                 <Box h={100}></Box>
                 <SimpleBox title="Concept">
-                    <Accordion defaultIndex={[0]} allowMultiple>
-                        <ConceptItem title="NExus Overとは">
-                            WISHには多くの身内イベントがあります。五月祭、2イベ、夏合宿、駒場祭、12公、卒公・・・。
-                            そのどれにも当てはまらない全く新しいイベントが今年始まります。
-                        </ConceptItem>
-                        <ConceptItem title="名前に込めた想い①">
-                            「Nexus」とは「つながり」です。WISHは45年という長い歴史を持つサークルで、かつ上下のつながりが強いという特色を持っています。
-                            代を超えたつながりはこのイベントのポイントとなります。
-                        </ConceptItem>
-                        <ConceptItem title="名前に込めた想い②">
-                            もう一つの鍵は、ストリートダンスシーンとのつながりです。
-                            キャストを見ていただければわかる通り、身内イベントとは思えない豪華さ、本気度です。
-                            敷居の低い身内イベントで、ストリートダンスシーンの空気感を存分に楽しんでいただければ幸いです。
-                        </ConceptItem>
-                        <ConceptItem title="さいごに">
-                            そしてこのイベントが、サークルという枠組みを超えた一歩を踏み出すきっかけになることを願っています。
-                        </ConceptItem>
-                    </Accordion>
+                    <Center textAlign="center">
+                        <VStack>
+                            <Heading fontSize="lg" mt="2" textDecoration="underline">
+                                ストリート × WISH
+                            </Heading>
+                            <Text fontSize="sm" mt="2">
+                                12公を筆頭に数多くのイベントが存在する T.U.D.C WISH
+                            </Text>
+                            <Text fontSize="sm" mt="2">
+                                45年という長い歴史を積み上げてきたWISHだからこそ体現し感じることができるNexusつまり
+                                <Text as="span" fontWeight="900">
+                                    「つながり」
+                                </Text>
+                            </Text>
+                            <Text fontSize="sm" mt="2">
+                                身内イベントと位置付けながらも、
+                                <Text as="span" fontWeight="900">
+                                    ストリートダンスシーンの 最前線
+                                </Text>
+                                を走るキャスト陣営。
+                                45年の歴史の中で、確かな実績と名を残した歴代のWISHer達。
+                            </Text>
+                            <Text fontSize="sm" mt="2">
+                                本イベントが、WISHの積み上げてきたものを体感できるとともに、
+                                <Text as="span" fontWeight="900">
+                                    サークルを超えた一歩
+                                </Text>
+                                を踏み出すきっかけとなることを願っています。
+                            </Text>
+                        </VStack>
+                    </Center>
                 </SimpleBox>
                 <SimpleBox title="Message">
                     <Image src="kakato.jpg" alt="kakato" />
@@ -61,14 +48,18 @@ export default function Concept() {
                         Kakato
                     </Heading>
                     <Box fontSize="sm" ml="5">
-                        <Text>自分のプロップスと</Text>
-                        <Text>WISHのカラーとの調和</Text>
-                        <Text>試行錯誤した答え</Text>
-                        <Text>たった一つのイベント</Text>
-                        <Text>たった5時間のイベント</Text>
-                        <Text>そこに全てを込めました</Text>
-                        <Text>第一回は六本木にて開催</Text>
-                        <Text>お待ちしております</Text>
+                        <Text>「WISHを変えられる」</Text>
+                        <Text>
+                            ありがたいことにそのような言葉をかけてもらえることがありましたが、行動できずにいました。
+                        </Text>
+                        <Text>
+                            その行動した末の答えをカタチにしたのが、本イベントです。
+                            経験、プロップス、熱量、遼太郎をはじめとする最高の運営陣と共に込められるだけ込めました。
+                        </Text>
+                        <Text>
+                            今までにない新しい身内イベントNExus Over、記念すべきvol.
+                            1は大都会六本木にて開催。現役OBG問わずお待ちしております。
+                        </Text>
                     </Box>
                 </SimpleBox>
                 <SimpleBox title="Message">
