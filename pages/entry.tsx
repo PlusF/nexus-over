@@ -166,7 +166,7 @@ function BattleEntry() {
                 <EntrySelect title="ジャンル" options={genres} onChange={setGenre} />
                 <EntryInput title="名前" value={name} onChange={setName} />
                 <EntryInput title="ダンサー名" value={dancerName} onChange={setDancerName} />
-                <Description text="※エントリー料2000円+One Drink" />
+                <Description text="※エントリー料2500円+One Drink" />
                 <SubmitButton text="Entry" onClick={handleEntry} isLoading={isLoading} />
             </Grid>
             <SuccessModal isOpen={isOpen} onClose={onClose} content="バトル" apply="エントリー" />
