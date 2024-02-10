@@ -15,9 +15,10 @@ function BaseLinkBox(props: {
             as="article"
             color="black"
             background="#ffffffbb"
-            px="5"
-            m="10"
+            p="5"
+            m="5"
             width={width}
+            height="100%"
             maxWidth="600"
         >
             {props.children}

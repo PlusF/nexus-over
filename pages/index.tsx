@@ -1,3 +1,4 @@
+import { SimpleBox } from '@/components/box';
 import { HomeLinkBox } from '@/components/linkbox';
 import { AnimatedLogo } from '@/components/logo';
 import { Box, Heading } from '@chakra-ui/react';
@@ -61,6 +62,16 @@ export default function Home() {
                     エントリー・観覧
                 </Heading>
             </HomeLinkBox>
+
+            <SimpleBox title="Teaser Movie">
+                <Box fontSize="sm">2024/3/9 卒業公演本番にて全編公開。</Box>
+                <iframe
+                    width="250"
+                    src="https://www.youtube.com/embed/9LS1Ia2j4sA?si=zYk68WZ0eVu68Ro_"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                ></iframe>
+            </SimpleBox>
 
             <HomeLinkBox
                 href="https://www.instagram.com/neo_wish?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="

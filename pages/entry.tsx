@@ -97,6 +97,7 @@ function SubmitButton(props: { text: string; onClick: () => void; isLoading?: bo
 function SuccessModal(props: {
     isOpen: boolean;
     onClose: () => void;
+    href: string;
     content: string;
     apply: string;
 }) {
@@ -112,7 +113,7 @@ function SuccessModal(props: {
                 </ModalBody>
 
                 <ModalFooter gap="2">
-                    <Button variant="outline" as={Link} href={'/entrylist'}>
+                    <Button variant="outline" as={Link} href={props.href}>
                         Entry List
                     </Button>
                     <Button variant="outline" as={Link} href={'/'}>
@@ -169,7 +170,13 @@ function BattleEntry() {
                 <Description text="※エントリー料2500円+One Drink" />
                 <SubmitButton text="Entry" onClick={handleEntry} isLoading={isLoading} />
             </Grid>
-            <SuccessModal isOpen={isOpen} onClose={onClose} content="バトル" apply="エントリー" />
+            <SuccessModal
+                isOpen={isOpen}
+                onClose={onClose}
+                href="/battle-entrylist"
+                content="バトル"
+                apply="エントリー"
+            />
         </SimpleBox>
     );
 }
@@ -214,7 +221,13 @@ function AudienceEntry() {
                 <Description text="※観覧料1000円+One Drink" />
                 <SubmitButton text="申込" onClick={handleEntry} isLoading={isLoading} />
             </Grid>
-            <SuccessModal isOpen={isOpen} onClose={onClose} content="イベント観覧" apply="申込" />
+            <SuccessModal
+                isOpen={isOpen}
+                onClose={onClose}
+                href="/audience-entrylist"
+                content="イベント観覧"
+                apply="申込"
+            />
         </SimpleBox>
     );
 }
@@ -228,7 +241,8 @@ export default function Entry() {
                 <BattleEntry />
                 <AudienceEntry />
             </Box>
-            <BaseLinkBox href="/entrylist" linkText="Entry List &rarr;" />
+            <BaseLinkBox href="/battle-entrylist" linkText="Battle Entry List &rarr;" />
+            <BaseLinkBox href="/audience-entrylist" linkText="観覧 Entry List &rarr;" />
             <BackLinkBox />
         </>
     );

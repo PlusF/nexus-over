@@ -2,11 +2,10 @@ import { SimpleBox } from '@/components/box';
 import { BackLinkBox } from '@/components/linkbox';
 import { NormalLogo } from '@/components/logo';
 import { Box, Grid, GridItem } from '@chakra-ui/react';
-import { AudienceEntry, BattleEntry } from '@prisma/client';
+import { BattleEntry } from '@prisma/client';
 
 type EntryListProps = {
     battleEntries: BattleEntry[];
-    audienceEntries: AudienceEntry[];
 };
 
 export default function BattleEntryList(props: EntryListProps) {
@@ -31,23 +30,7 @@ export default function BattleEntryList(props: EntryListProps) {
                     ))}
                 </Grid>
             </SimpleBox>
-            <SimpleBox title="Audience List">
-                <Grid templateColumns="repeat(3, 1fr)" gap="1" mt="5">
-                    {props.audienceEntries.map((entry: any) => (
-                        <>
-                            <GridItem key={entry.id + 'generation'} colSpan={1}>
-                                {entry.generation}
-                            </GridItem>
-                            <GridItem key={entry.id + 'genre'} colSpan={1}>
-                                {entry.genre}
-                            </GridItem>
-                            <GridItem key={entry.id + 'name'} colSpan={1}>
-                                {entry.name}
-                            </GridItem>
-                        </>
-                    ))}
-                </Grid>
-            </SimpleBox>
+            <Box h={400}></Box>
             <BackLinkBox href="/entry" />
         </>
     );
@@ -60,15 +43,9 @@ export async function getServerSideProps(context: any) {
         const battleEntries = await fetch(`${protocol}://${host}/api/battle`).then((data) =>
             data.json()
         );
-        const audienceEntries = await fetch(`${protocol}://${host}/api/audience`).then((data) =>
-            data.json()
-        );
-        console.log(battleEntries);
-        console.log(audienceEntries);
         return {
             props: {
                 battleEntries: battleEntries,
-                audienceEntries: audienceEntries,
             },
         };
     } catch (e) {

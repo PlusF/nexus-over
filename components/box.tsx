@@ -9,7 +9,7 @@ function BaseBox(props: { width?: string; children?: React.ReactNode }) {
             color="black"
             background="#ffffffbb"
             p="5"
-            m="10"
+            m="5"
             width={width}
             height="100%"
             maxWidth="600"
