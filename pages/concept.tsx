@@ -2,7 +2,7 @@ import { SimpleBox } from '@/components/box';
 import InstagramButton from '@/components/instagram';
 import { BackLinkBox } from '@/components/linkbox';
 import { NormalLogo } from '@/components/logo';
-import { Box, Center, Heading, Image, Text, VStack } from '@chakra-ui/react';
+import { Box, Center, HStack, Heading, Img, Spacer, Text, VStack } from '@chakra-ui/react';
 
 export default function Concept() {
     return (
@@ -44,14 +44,11 @@ export default function Concept() {
                     </Center>
                 </SimpleBox>
                 <SimpleBox title="Message">
-                    <Image src="kakato.jpg" alt="kakato" />
-                    <Heading fontSize="md" mt="1">
-                        <Text as="span" fontWeight="900">
-                            Kakato
-                        </Text>
-                        <InstagramButton url="https://www.instagram.com/k_t_w_l/" />
+                    <Img src="kakato.jpg" alt="kakato" />
+                    <Heading fontSize="md" fontWeight="900" mt="1">
+                        Kakato
                     </Heading>
-                    <Box fontSize="sm" ml="5">
+                    <Box fontSize="sm" mx="3">
                         <Text>「WISHを変えられる」</Text>
                         <Text>
                             ありがたいことにそのような言葉をかけてもらえることがありましたが、行動できずにいました。
@@ -64,17 +61,18 @@ export default function Concept() {
                             今までにない新しい身内イベントNExus Over、記念すべきvol.
                             1は大都会六本木にて開催。現役OBG問わずお待ちしております。
                         </Text>
+                        <HStack>
+                            <Spacer />
+                            <InstagramButton url="https://www.instagram.com/k_t_w_l/" />
+                        </HStack>
                     </Box>
                 </SimpleBox>
                 <SimpleBox title="Message">
-                    <Image src="rol.jpg" alt="rol" />
-                    <Heading fontSize="md" mt="1">
-                        <Text as="span" fontWeight="900">
-                            ROL
-                        </Text>
-                        <InstagramButton url="https://www.instagram.com/rol_rlasic/" />
+                    <Img src="rol.jpg" alt="rol" />
+                    <Heading fontSize="md" fontWeight="900" mt="1">
+                        ROL
                     </Heading>
-                    <Box fontSize="sm" ml="5">
+                    <Box fontSize="sm" mx="3">
                         <Text>
                             現役時代はほぼサークルの中で生きてきました。
                             食わず嫌いというか、出不精というか、そんなぼんやりとした理由だった気がします。
@@ -89,6 +87,10 @@ export default function Concept() {
                             このイベントが、みんなの熱量を増やす燃料になってほしいと思っています。
                         </Text>
                     </Box>
+                    <HStack>
+                        <Spacer />
+                        <InstagramButton url="https://www.instagram.com/rol_rlasic/" />
+                    </HStack>
                 </SimpleBox>
                 <Box h={50}></Box>
             </Box>
