@@ -1,7 +1,8 @@
+import { Box, Center, Heading } from '@chakra-ui/react';
+
 import { SimpleBox } from '@/components/box';
 import { HomeLinkBox } from '@/components/linkbox';
 import { AnimatedLogo } from '@/components/logo';
-import { Box, Center, Heading } from '@chakra-ui/react';
 import Head from 'next/head';
 
 export default function Home() {
@@ -64,7 +65,11 @@ export default function Home() {
             </HomeLinkBox>
 
             <SimpleBox title="Teaser Movie">
-                <Box fontSize="sm">2024/3/9 卒業公演本番にて全編公開。</Box>
+                <Box fontSize="sm" mt="2">
+                    2024/3/9 卒業公演本番にて準告知映像を公開。
+                    <br />
+                    2024/4/13 新歓公演本番にて本告知映像を公開。
+                </Box>
                 <Center>
                     <iframe
                         width="250"

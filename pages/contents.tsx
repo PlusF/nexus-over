@@ -11,7 +11,7 @@ export default function Contents() {
                 <Box h={100}></Box>
                 <SimpleBox title="Battle">Coming soon...</SimpleBox>
                 <SimpleBox title="Showcases">Coming soon...</SimpleBox>
-                <Box h={200}></Box>
+                <Box h={600}></Box>
             </Box>
             <BackLinkBox />
         </>

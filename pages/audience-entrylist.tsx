@@ -1,7 +1,8 @@
-import { SimpleBox } from '@/components/box';
+import { Box, Grid, GridItem, Heading } from '@chakra-ui/react';
+
+import { BaseBox } from '@/components/box';
 import { BackLinkBox } from '@/components/linkbox';
 import { NormalLogo } from '@/components/logo';
-import { Box, Grid, GridItem } from '@chakra-ui/react';
 import { AudienceEntry } from '@prisma/client';
 
 type EntryListProps = {
@@ -13,7 +14,8 @@ export default function AudienceEntryList(props: EntryListProps) {
         <>
             <NormalLogo />
             <Box h={100}></Box>
-            <SimpleBox title="Audience List">
+            <BaseBox>
+                <Heading>Audience List</Heading>
                 <Grid
                     templateColumns="repeat(3, 1fr)"
                     gridTemplateColumns={'20px 75px 1fr'}
@@ -34,8 +36,8 @@ export default function AudienceEntryList(props: EntryListProps) {
                         </>
                     ))}
                 </Grid>
-            </SimpleBox>
-            <Box h={500}></Box>
+            </BaseBox>
+            <Box h={600}></Box>
             <BackLinkBox href="/entry" />
         </>
     );

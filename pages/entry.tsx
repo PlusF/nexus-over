@@ -1,6 +1,4 @@
-import { SimpleBox } from '@/components/box';
 import { BackLinkBox, BaseLinkBox } from '@/components/linkbox';
-import { NormalLogo } from '@/components/logo';
 import {
     Box,
     Button,
@@ -19,8 +17,11 @@ import {
     Text,
     useDisclosure,
 } from '@chakra-ui/react';
-import Link from 'next/link';
 import { Dispatch, SetStateAction, useState } from 'react';
+
+import { BaseBox } from '@/components/box';
+import { NormalLogo } from '@/components/logo';
+import Link from 'next/link';
 
 function EntrySelect(props: {
     title: string;
@@ -74,7 +75,9 @@ function EntryInput(props: {
 function Description(props: { children?: React.ReactNode }) {
     return (
         <GridItem colSpan={2} textAlign="center" mt="5">
-            <Text fontSize="sm">{props.children}</Text>
+            <Text fontSize="sm" textAlign="left" ml="5">
+                {props.children}
+            </Text>
         </GridItem>
     );
 }
@@ -161,20 +164,19 @@ function BattleEntry() {
         }
     }
     return (
-        <SimpleBox title="Battle Entry">
+        <BaseBox>
+            <Heading>Battle Entry</Heading>
             <Grid templateColumns="repeat(2, 1fr)" gridTemplateColumns={'100px 1fr'} gap="2" mt="5">
                 <EntrySelect title="代" options={generations} onChange={setGeneration} />
                 <EntrySelect title="ジャンル" options={genres} onChange={setGenre} />
                 <EntryInput title="名前" value={name} onChange={setName} />
                 <EntryInput title="ダンサー名" value={dancerName} onChange={setDancerName} />
                 <Description>
-                    <Text fontSize="sm" textAlign="left" ml="5">
-                        ※エントリー料2500円+One Drink
-                        <br />
-                        ※エントリー上限：50枠
-                        <br />
-                        ※枠が埋まるとキャンセル待ちとなります。
-                    </Text>
+                    ※エントリー料2500円+One Drink
+                    <br />
+                    ※エントリー上限：50枠
+                    <br />
+                    ※枠が埋まるとキャンセル待ちとなります。
                 </Description>
                 <SubmitButton text="Entry" onClick={handleEntry} isLoading={isLoading} />
             </Grid>
@@ -185,7 +187,7 @@ function BattleEntry() {
                 content="バトル"
                 apply="エントリー"
             />
-        </SimpleBox>
+        </BaseBox>
     );
 }
 
@@ -221,19 +223,18 @@ function AudienceEntry() {
         }
     }
     return (
-        <SimpleBox title="観覧申込">
+        <BaseBox>
+            <Heading>観覧申込</Heading>
             <Grid templateColumns="repeat(2, 1fr)" gridTemplateColumns={'100px 1fr'} gap="2" mt="5">
                 <EntrySelect title="代" options={generations} onChange={setGeneration} />
                 <EntrySelect title="ジャンル" options={genres} onChange={setGenre} />
                 <EntryInput title="名前" value={name} onChange={setName} />
                 <Description>
-                    <Text fontSize="sm" textAlign="left" ml="5">
-                        ※観覧料1000円+One Drink
-                        <br />
-                        ※観覧上限：20枠
-                        <br />
-                        ※枠が埋まるとキャンセル待ちとなります。
-                    </Text>
+                    ※観覧料1000円+One Drink
+                    <br />
+                    ※観覧上限：20枠
+                    <br />
+                    ※枠が埋まるとキャンセル待ちとなります。
                 </Description>
                 <SubmitButton text="申込" onClick={handleEntry} isLoading={isLoading} />
             </Grid>
@@ -244,7 +245,7 @@ function AudienceEntry() {
                 content="イベント観覧"
                 apply="申込"
             />
-        </SimpleBox>
+        </BaseBox>
     );
 }
 

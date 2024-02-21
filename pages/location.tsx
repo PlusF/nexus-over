@@ -1,7 +1,8 @@
+import { AspectRatio, Box, Heading, Text } from '@chakra-ui/react';
+
 import { SimpleBox } from '@/components/box';
 import { BackLinkBox } from '@/components/linkbox';
 import { NormalLogo } from '@/components/logo';
-import { AspectRatio, Box, Heading, Text } from '@chakra-ui/react';
 
 export default function Location() {
     return (
@@ -40,7 +41,7 @@ export default function Location() {
                     </Heading>
                     Coming soon...
                 </SimpleBox>
-                <Box h={100}></Box>
+                <Box h={150}></Box>
             </Box>
             <BackLinkBox />
         </>
