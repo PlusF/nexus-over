@@ -1,5 +1,6 @@
-import { extendTheme } from '@chakra-ui/react';
 import '@fontsource/jomolhari';
+
+import { extendTheme } from '@chakra-ui/react';
 
 const theme = extendTheme({
     fonts: {
@@ -14,7 +15,6 @@ const theme = extendTheme({
             body: {
                 bg: '#333333',
                 overflowX: 'clip',
-                // textAlign: 'center',
             },
         },
     },

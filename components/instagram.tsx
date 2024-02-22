@@ -1,21 +1,18 @@
-import { IconButton } from '@chakra-ui/react';
+import { Button, Text } from '@chakra-ui/react';
+
 import { FiInstagram } from 'react-icons/fi';
 
-export default function InstagramButton(props: { url: string; color?: string }) {
+export default function InstagramButton(props: { url: string; backgroundColor?: string }) {
     function openInstagram() {
         window.open(props.url);
     }
+    const backgroundColor = props.backgroundColor || 'black';
     return (
-        <IconButton
-            color={props.color || '#000'}
-            background={'#0000'}
-            aria-label="Open Instagram"
-            icon={<FiInstagram />}
-            onClick={openInstagram}
-            size="md"
-            width="1"
-            height="4"
-            verticalAlign="middle"
-        />
+        <Button onClick={openInstagram} rounded="none" backgroundColor={backgroundColor}>
+            <Text mr="1" color="white">
+                &rarr;
+            </Text>
+            <FiInstagram color="white" />
+        </Button>
     );
 }

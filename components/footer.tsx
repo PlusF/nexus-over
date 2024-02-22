@@ -1,4 +1,5 @@
 import { Box, Center, HStack, Text } from '@chakra-ui/react';
+
 import InstagramButton from './instagram';
 
 const boxStyle = {
@@ -14,8 +15,11 @@ export default function Footer() {
         <Box sx={boxStyle}>
             <Center>
                 <HStack>
-                    <Text>Contact &rarr;</Text>
-                    <InstagramButton url="https://www.instagram.com/neo_wish/" color="white" />
+                    <Text>Contact</Text>
+                    <InstagramButton
+                        url="https://www.instagram.com/neo_wish/"
+                        backgroundColor="#111"
+                    />
                 </HStack>
             </Center>
         </Box>
