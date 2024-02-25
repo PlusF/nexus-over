@@ -46,7 +46,7 @@ export default function Home() {
                 <Heading fontSize="md" mt="2">
                     DJ
                 </Heading>
-                <Box fontSize="sm">OnokUro (Mnchr-m)</Box>
+                <Box fontSize="sm">OnokUro (happen inn Mnchr-m)</Box>
             </HomeLinkBox>
 
             <HomeLinkBox href="/contents" title="Contents">

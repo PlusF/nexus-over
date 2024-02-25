@@ -40,10 +40,18 @@ export default function Casts() {
                             <CastBox name="RiN." represents="Novel Nextus/fidi" />
                         </SimpleMotionBox>
                         <SimpleMotionBox title="DJ">
-                            <CastBox name="OnokUro" represents="Mnchr-m" img={'OnokUro.jpg'} />
+                            <CastBox
+                                name="OnokUro"
+                                represents="happen inn Mnchr-m"
+                                img={'OnokUro.jpg'}
+                            />
                         </SimpleMotionBox>
                         <SimpleMotionBox title="MC">
-                            <CastBox name="Kakato" represents="44th" img={'kakato.jpg'} />
+                            <CastBox
+                                name="Kakato"
+                                represents="44th/fluorite/Buckdown"
+                                img={'kakato.jpg'}
+                            />
                         </SimpleMotionBox>
                         <SimpleMotionBox title="Guest Battlers">
                             <CastBox
