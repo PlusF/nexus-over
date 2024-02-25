@@ -17,7 +17,7 @@ function CastBox(props: { name: string; represents: string; img?: string }) {
 }
 
 export default function Casts() {
-    const comingSoon = true;
+    const comingSoon = false;
     return (
         <>
             <Box>
