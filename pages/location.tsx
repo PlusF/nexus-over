@@ -1,6 +1,6 @@
 import { AspectRatio, Box, Heading, Text } from '@chakra-ui/react';
 
-import { SimpleBox } from '@/components/box';
+import { SimpleMotionBox } from '@/components/box';
 import { BackLinkBox } from '@/components/linkbox';
 import { NormalLogo } from '@/components/logo';
 
@@ -10,7 +10,7 @@ export default function Location() {
             <Box>
                 <NormalLogo />
                 <Box h={100}></Box>
-                <SimpleBox title="Location">
+                <SimpleMotionBox title="Location">
                     <Heading fontSize="lg" mt="2">
                         六本木CUBE
                     </Heading>
@@ -34,13 +34,13 @@ export default function Location() {
                             loading="lazy"
                         ></iframe>
                     </AspectRatio>
-                </SimpleBox>
-                <SimpleBox title="Time Table">
+                </SimpleMotionBox>
+                <SimpleMotionBox title="Time Table">
                     <Heading fontSize="md" mt="2">
                         2024/6/1(Sat.)
                     </Heading>
                     Coming soon...
-                </SimpleBox>
+                </SimpleMotionBox>
                 <Box h={150}></Box>
             </Box>
             <BackLinkBox />

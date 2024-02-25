@@ -172,7 +172,7 @@ function BattleEntry() {
                 <EntryInput title="名前" value={name} onChange={setName} />
                 <EntryInput title="ダンサー名" value={dancerName} onChange={setDancerName} />
                 <Description>
-                    ※エントリー料2500円+One Drink
+                    ※エントリー料3500円(ドリンク2杯込み)
                     <br />
                     ※エントリー上限：50枠
                     <br />
@@ -230,7 +230,7 @@ function AudienceEntry() {
                 <EntrySelect title="ジャンル" options={genres} onChange={setGenre} />
                 <EntryInput title="名前" value={name} onChange={setName} />
                 <Description>
-                    ※観覧料1000円+One Drink
+                    ※観覧料2000円(ドリンク2杯込み)
                     <br />
                     ※観覧上限：20枠
                     <br />

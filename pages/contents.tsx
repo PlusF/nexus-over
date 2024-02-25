@@ -1,4 +1,4 @@
-import { SimpleBox } from '@/components/box';
+import { SimpleMotionBox } from '@/components/box';
 import { BackLinkBox } from '@/components/linkbox';
 import { NormalLogo } from '@/components/logo';
 import { Box } from '@chakra-ui/react';
@@ -9,8 +9,8 @@ export default function Contents() {
             <Box>
                 <NormalLogo />
                 <Box h={100}></Box>
-                <SimpleBox title="Battle">Coming soon...</SimpleBox>
-                <SimpleBox title="Showcases">Coming soon...</SimpleBox>
+                <SimpleMotionBox title="Battle">Coming soon...</SimpleMotionBox>
+                <SimpleMotionBox title="Showcases">Coming soon...</SimpleMotionBox>
                 <Box h={600}></Box>
             </Box>
             <BackLinkBox />

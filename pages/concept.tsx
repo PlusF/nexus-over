@@ -1,8 +1,9 @@
-import { SimpleBox } from '@/components/box';
+import { Box, Center, HStack, Heading, Img, Spacer, Text, VStack } from '@chakra-ui/react';
+
+import { SimpleMotionBox } from '@/components/box';
 import InstagramButton from '@/components/instagram';
 import { BackLinkBox } from '@/components/linkbox';
 import { NormalLogo } from '@/components/logo';
-import { Box, Center, HStack, Heading, Img, Spacer, Text, VStack } from '@chakra-ui/react';
 
 export default function Concept() {
     return (
@@ -10,7 +11,7 @@ export default function Concept() {
             <Box>
                 <NormalLogo />
                 <Box h={100}></Box>
-                <SimpleBox title="Concept">
+                <SimpleMotionBox title="Concept">
                     <Center textAlign="center">
                         <VStack>
                             <Heading fontSize="lg" mt="2" textDecoration="underline">
@@ -42,8 +43,8 @@ export default function Concept() {
                             </Text>
                         </VStack>
                     </Center>
-                </SimpleBox>
-                <SimpleBox title="Message">
+                </SimpleMotionBox>
+                <SimpleMotionBox title="Message">
                     <Img src="kakato.jpg" alt="kakato" />
                     <Heading fontSize="md" fontWeight="900" mt="1">
                         Kakato
@@ -66,8 +67,8 @@ export default function Concept() {
                             <InstagramButton url="https://www.instagram.com/k_t_w_l/" />
                         </HStack>
                     </Box>
-                </SimpleBox>
-                <SimpleBox title="Message">
+                </SimpleMotionBox>
+                <SimpleMotionBox title="Message">
                     <Img src="rol.jpg" alt="rol" />
                     <Heading fontSize="md" fontWeight="900" mt="1">
                         ROL
@@ -91,7 +92,7 @@ export default function Concept() {
                         <Spacer />
                         <InstagramButton url="https://www.instagram.com/rol_rlasic/" />
                     </HStack>
-                </SimpleBox>
+                </SimpleMotionBox>
                 <Box h={50}></Box>
             </Box>
             <BackLinkBox />

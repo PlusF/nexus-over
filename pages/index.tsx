@@ -1,6 +1,6 @@
 import { Box, Center, Heading } from '@chakra-ui/react';
 
-import { SimpleBox } from '@/components/box';
+import { SimpleMotionBox } from '@/components/box';
 import { HomeLinkBox } from '@/components/linkbox';
 import { AnimatedLogo } from '@/components/logo';
 import Head from 'next/head';
@@ -64,7 +64,7 @@ export default function Home() {
                 </Heading>
             </HomeLinkBox>
 
-            <SimpleBox title="Teaser Movie">
+            <SimpleMotionBox title="Teaser Movie">
                 <Box fontSize="sm" mt="2">
                     2024/3/9 卒業公演本番にて準告知映像を公開。
                     <br />
@@ -78,7 +78,7 @@ export default function Home() {
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     ></iframe>
                 </Center>
-            </SimpleBox>
+            </SimpleMotionBox>
 
             <HomeLinkBox
                 href="https://www.instagram.com/neo_wish?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
