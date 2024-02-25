@@ -41,7 +41,7 @@ export default function Home() {
                 <Heading fontSize="md" mt="2">
                     Judges
                 </Heading>
-                <Box fontSize="sm">U-ki the retro (Bixbite/GRAYSOURCE)</Box>
+                <Box fontSize="sm">U-KI the retro (Bixbite/GRAYSOURCE)</Box>
                 <Box fontSize="sm">RiN. (Novel Nextus/fidi)</Box>
                 <Heading fontSize="md" mt="2">
                     DJ
