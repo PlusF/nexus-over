@@ -33,7 +33,7 @@ export default function Casts() {
                     <>
                         <SimpleMotionBox title="Judges">
                             <CastBox
-                                name="U-ki the retro"
+                                name="U-KI the retro"
                                 represents="Bixbite/GRAYSOURCE"
                                 img={'U-ki_the_retro.jpg'}
                             />
