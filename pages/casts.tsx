@@ -37,7 +37,7 @@ export default function Casts() {
                     <CastBox name="Kakato" represents="44th" img={'kakato.jpg'} />
                 </SimpleMotionBox>
                 <SimpleMotionBox title="Guest Battlers">
-                    <CastBox name="Tait Angle" represents="35th/LDC" img={'Tait_Angle.png'} />
+                    <CastBox name="Tait Angle" represents="35th/LDC" img={'Tait_Angle.jpg'} />
                     <CastBox
                         name="軍犬ZERO"
                         represents="39th/Mighty Beat Bation/Free Front"
