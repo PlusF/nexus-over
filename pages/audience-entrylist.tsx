@@ -1,6 +1,7 @@
-import { Box, Grid, GridItem, Heading } from '@chakra-ui/react';
+import { Box, Heading } from '@chakra-ui/react';
 
 import { BaseBox } from '@/components/box';
+import { AudienceEntryBox } from '@/components/entrybox';
 import { BackLinkBox } from '@/components/linkbox';
 import { NormalLogo } from '@/components/logo';
 import { AudienceEntry } from '@prisma/client';
@@ -15,27 +16,10 @@ export default function AudienceEntryList(props: EntryListProps) {
             <NormalLogo />
             <Box h={100}></Box>
             <BaseBox>
-                <Heading>Audience List</Heading>
-                <Grid
-                    templateColumns="repeat(3, 1fr)"
-                    gridTemplateColumns={'20px 75px 1fr'}
-                    gap="1"
-                    mt="5"
-                >
-                    {props.audienceEntries.map((entry: any) => (
-                        <>
-                            <GridItem key={entry.id + 'generation'} colSpan={1}>
-                                {entry.generation}
-                            </GridItem>
-                            <GridItem key={entry.id + 'genre'} colSpan={1}>
-                                {entry.genre}
-                            </GridItem>
-                            <GridItem key={entry.id + 'name'} colSpan={1}>
-                                {entry.name}
-                            </GridItem>
-                        </>
-                    ))}
-                </Grid>
+                <Heading mb="5">Audience List</Heading>
+                {props.audienceEntries.map((entry: any) => (
+                    <AudienceEntryBox key={entry.id} entry={entry} />
+                ))}
             </BaseBox>
             <Box h={600}></Box>
             <BackLinkBox href="/entry" />

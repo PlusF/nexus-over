@@ -23,6 +23,10 @@ import { BaseBox } from '@/components/box';
 import { NormalLogo } from '@/components/logo';
 import Link from 'next/link';
 
+const generations = [...Array(46)].map((_, i) => String(i + 1));
+const genres = ['Hiphop', 'Pop', 'Lock', 'Breaking', 'House', 'Jazz', 'Waack', 'Freestyle'];
+const limitedGenres = ['Hiphop', 'Pop', 'Lock', 'Breaking', 'House', 'Jazz', 'Waack'];
+
 function EntrySelect(props: {
     title: string;
     options: string[];
@@ -35,7 +39,7 @@ function EntrySelect(props: {
             </GridItem>
             <GridItem colSpan={1}>
                 <Select
-                    placeholder="Select option"
+                    placeholder="選んでください"
                     onChange={(event) => props.onChange(event.target.value)}
                     isRequired
                 >
@@ -105,7 +109,7 @@ function SuccessModal(props: {
     apply: string;
 }) {
     return (
-        <Modal isOpen={props.isOpen} onClose={props.onClose} size="sm">
+        <Modal isOpen={props.isOpen} onClose={props.onClose} size="sm" isCentered>
             <ModalOverlay />
             <ModalContent>
                 <ModalHeader>{props.apply}完了</ModalHeader>
@@ -131,20 +135,41 @@ function SuccessModal(props: {
     );
 }
 
+function ErrorModal(props: { isOpen: boolean; onClose: () => void }) {
+    return (
+        <Modal isOpen={props.isOpen} onClose={props.onClose} size="sm" isCentered>
+            <ModalOverlay />
+            <ModalContent>
+                <ModalHeader>エラー</ModalHeader>
+                <ModalCloseButton />
+                <ModalBody>未入力の項目があります。全ての項目を入力してください。</ModalBody>
+
+                <ModalFooter>
+                    <Button onClick={props.onClose}>Close</Button>
+                </ModalFooter>
+            </ModalContent>
+        </Modal>
+    );
+}
+
 function BattleEntry() {
     const [generation, setGeneration] = useState<string>('');
-    const generations = [...Array(45)].map((_, i) => String(i + 1));
     const [genre, setGenre] = useState<string>('');
-    const genres = ['Hiphop', 'Pop', 'Lock', 'Breaking', 'House', 'Jazz', 'Waack', 'Freestyle'];
     const [name, setName] = useState<string>('');
     const [dancerName, setDancerName] = useState<string>('');
-    const { isOpen, onOpen, onClose } = useDisclosure();
+    const {
+        isOpen: isOpenSuccess,
+        onOpen: onOpenSuccess,
+        onClose: onCloseSuccess,
+    } = useDisclosure();
     const [isLoading, setIsLoading] = useState<boolean>(false);
+    const { isOpen: isOpenError, onOpen: onOpenError, onClose: onCloseError } = useDisclosure();
 
     async function handleEntry() {
         try {
             if (!generation || !genre || !name || !dancerName) {
-                throw new Error('未入力の項目があります。全ての項目を入力してください。');
+                onOpenError();
+                return;
             }
             setIsLoading(true);
             const res = await fetch('/api/battle', {
@@ -156,7 +181,7 @@ function BattleEntry() {
             });
             const data = await res.json();
             setIsLoading(false);
-            onOpen();
+            onOpenSuccess();
         } catch (error) {
             alert(error);
             setIsLoading(false);
@@ -181,29 +206,35 @@ function BattleEntry() {
                 <SubmitButton text="Entry" onClick={handleEntry} isLoading={isLoading} />
             </Grid>
             <SuccessModal
-                isOpen={isOpen}
-                onClose={onClose}
+                isOpen={isOpenSuccess}
+                onClose={onCloseSuccess}
                 href="/battle-entrylist"
                 content="バトル"
                 apply="エントリー"
             />
+            <ErrorModal isOpen={isOpenError} onClose={onCloseError} />
         </BaseBox>
     );
 }
 
 function AudienceEntry() {
     const [generation, setGeneration] = useState<string>('');
-    const generations = [...Array(45)].map((_, i) => String(i + 1));
+    const generations = [...Array(46)].map((_, i) => String(i + 1));
     const [genre, setGenre] = useState<string>('');
-    const genres = ['Hiphop', 'Pop', 'Lock', 'Breaking', 'House', 'Jazz', 'Waack'];
     const [name, setName] = useState<string>('');
-    const { isOpen, onOpen, onClose } = useDisclosure();
+    const {
+        isOpen: isOpenSuccess,
+        onOpen: onOpenSuccess,
+        onClose: onCloseSuccess,
+    } = useDisclosure();
     const [isLoading, setIsLoading] = useState<boolean>(false);
+    const { isOpen: isOpenError, onOpen: onOpenError, onClose: onCloseError } = useDisclosure();
 
     async function handleEntry() {
         try {
             if (!generation || !genre || !name) {
-                throw new Error('未入力の項目があります。全ての項目を入力してください。');
+                onOpenError();
+                return;
             }
             setIsLoading(true);
             const res = await fetch('/api/audience', {
@@ -215,7 +246,7 @@ function AudienceEntry() {
             });
             const data = await res.json();
             setIsLoading(false);
-            onOpen();
+            onOpenSuccess();
         } catch (error) {
             alert(error);
             setIsLoading(false);
@@ -227,7 +258,7 @@ function AudienceEntry() {
             <Heading>観覧申込</Heading>
             <Grid templateColumns="repeat(2, 1fr)" gridTemplateColumns={'100px 1fr'} gap="2" mt="5">
                 <EntrySelect title="代" options={generations} onChange={setGeneration} />
-                <EntrySelect title="ジャンル" options={genres} onChange={setGenre} />
+                <EntrySelect title="ジャンル" options={limitedGenres} onChange={setGenre} />
                 <EntryInput title="名前" value={name} onChange={setName} />
                 <Description>
                     ※観覧料2000円(ドリンク2杯込み)
@@ -239,12 +270,13 @@ function AudienceEntry() {
                 <SubmitButton text="申込" onClick={handleEntry} isLoading={isLoading} />
             </Grid>
             <SuccessModal
-                isOpen={isOpen}
-                onClose={onClose}
+                isOpen={isOpenSuccess}
+                onClose={onCloseSuccess}
                 href="/audience-entrylist"
                 content="イベント観覧"
                 apply="申込"
             />
+            <ErrorModal isOpen={isOpenError} onClose={onCloseError} />
         </BaseBox>
     );
 }
