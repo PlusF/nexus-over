@@ -35,36 +35,32 @@ export default function Casts() {
                             <CastBox
                                 name="U-KI the retro"
                                 represents="Bixbite/GRAYSOURCE"
-                                img={'U-ki_the_retro.jpg'}
+                                img="U-ki_the_retro.jpg"
                             />
-                            <CastBox name="RiN." represents="Novel Nextus/fidi" />
+                            <CastBox name="RiN." represents="Novel Nextus/fidi" img="RiN.jpg" />
                         </SimpleMotionBox>
                         <SimpleMotionBox title="DJ">
                             <CastBox
                                 name="OnokUro"
                                 represents="happen inn Mnchr-m"
-                                img={'OnokUro.jpg'}
+                                img="OnokUro.jpg"
                             />
                         </SimpleMotionBox>
                         <SimpleMotionBox title="MC">
                             <CastBox
                                 name="Kakato"
                                 represents="44th/fluorite/Buckdown"
-                                img={'kakato.jpg'}
+                                img="kakato.jpg"
                             />
                         </SimpleMotionBox>
                         <SimpleMotionBox title="Guest Battlers">
-                            <CastBox
-                                name="Tait Angle"
-                                represents="35th/LDC"
-                                img={'Tait_Angle.jpg'}
-                            />
+                            <CastBox name="Tait Angle" represents="35th/LDC" img="Tait_Angle.jpg" />
                             <CastBox
                                 name="軍犬ZERO"
                                 represents="39th/Mighty Beat Bation/Free Front"
-                                img={'軍犬ZERO.JPG'}
+                                img="軍犬ZERO.JPG"
                             />
-                            <CastBox name="Jr." represents="41st/Freaky Dickies" img={'Jr.jpg'} />
+                            <CastBox name="Jr." represents="41st/Freaky Dickies" img="Jr.jpg" />
                         </SimpleMotionBox>
                         <Box h={50}></Box>
                     </>
