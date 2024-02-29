@@ -38,7 +38,7 @@ function ScrollOnce(props: { children: React.ReactNode; enableTap?: boolean }) {
         <motion.div
             initial="offscreen"
             whileInView="onscreen"
-            viewport={{ once: true, amount: 0.4 }}
+            viewport={{ once: true, amount: 0.2 }}
             style={{ width: '100%', height: '100%' }}
             whileTap={props.enableTap ? 'tap' : undefined}
             whileHover={props.enableTap ? 'hover' : undefined}
