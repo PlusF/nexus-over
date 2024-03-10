@@ -20,7 +20,7 @@ function BaseBox(props: { width?: string; children?: React.ReactNode }) {
     );
 }
 
-function SimpleColoredMotionBox(props: { title: string; children: React.ReactNode }) {
+function SimpleColoredMotionBox(props: { title: string; children?: React.ReactNode }) {
     return (
         <BaseBox>
             <Heading>{props.title}</Heading>
@@ -29,7 +29,7 @@ function SimpleColoredMotionBox(props: { title: string; children: React.ReactNod
     );
 }
 
-function SimpleMotionBox(props: { title: string; children: React.ReactNode }) {
+function SimpleMotionBox(props: { title: string; children?: React.ReactNode }) {
     return (
         <ScrollOnce>
             <BaseBox>

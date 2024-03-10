@@ -1,7 +1,7 @@
+import { BattleEntryBox, WaitCancelBox } from '@/components/entrybox';
 import { Box, Heading } from '@chakra-ui/react';
 
 import { BaseBox } from '@/components/box';
-import { BattleEntryBox } from '@/components/entrybox';
 import { BackLinkBox } from '@/components/linkbox';
 import { NormalLogo } from '@/components/logo';
 import { BattleEntry } from '@prisma/client';
@@ -17,8 +17,11 @@ export default function BattleEntryList(props: EntryListProps) {
             <Box h={100}></Box>
             <BaseBox>
                 <Heading mb="5">Battle Entry List</Heading>
-                {props.battleEntries.map((entry: any) => (
-                    <BattleEntryBox key={entry.id} entry={entry} />
+                {props.battleEntries.map((entry: BattleEntry, i: number) => (
+                    <>
+                        {i === 60 && <WaitCancelBox />}
+                        <BattleEntryBox key={entry.id} entry={entry} />
+                    </>
                 ))}
             </BaseBox>
             <Box h={50}></Box>

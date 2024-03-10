@@ -1,7 +1,7 @@
+import { AudienceEntryBox, WaitCancelBox } from '@/components/entrybox';
 import { Box, Heading } from '@chakra-ui/react';
 
 import { BaseBox } from '@/components/box';
-import { AudienceEntryBox } from '@/components/entrybox';
 import { BackLinkBox } from '@/components/linkbox';
 import { NormalLogo } from '@/components/logo';
 import { AudienceEntry } from '@prisma/client';
@@ -17,8 +17,11 @@ export default function AudienceEntryList(props: EntryListProps) {
             <Box h={100}></Box>
             <BaseBox>
                 <Heading mb="5">Audience List</Heading>
-                {props.audienceEntries.map((entry: any) => (
-                    <AudienceEntryBox key={entry.id} entry={entry} />
+                {props.audienceEntries.map((entry: AudienceEntry, i: number) => (
+                    <>
+                        {i === 60 && <WaitCancelBox />}
+                        <AudienceEntryBox key={entry.id} entry={entry} />
+                    </>
                 ))}
             </BaseBox>
             <Box h={600}></Box>

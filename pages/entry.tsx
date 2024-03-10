@@ -199,7 +199,7 @@ function BattleEntry() {
                 <Description>
                     ※エントリー料3500円(ドリンク2杯込み)
                     <br />
-                    ※エントリー上限：50枠
+                    ※エントリー上限：60枠
                     <br />
                     ※枠が埋まるとキャンセル待ちとなります。
                 </Description>

@@ -11,6 +11,14 @@ function EntryBox(props: { generation: string; genre: string; name: string }) {
     );
 }
 
+function WaitCancelBox() {
+    return (
+        <HStack mt="5">
+            <Text>以下キャンセル待ち</Text>
+        </HStack>
+    );
+}
+
 function BattleEntryBox(props: { entry: BattleEntry }) {
     return (
         <EntryBox
@@ -31,4 +39,4 @@ function AudienceEntryBox(props: { entry: AudienceEntry }) {
     );
 }
 
-export { AudienceEntryBox, BattleEntryBox };
+export { AudienceEntryBox, BattleEntryBox, WaitCancelBox };
