@@ -19,7 +19,7 @@ export default function AudienceEntryList(props: EntryListProps) {
                 <Heading mb="5">Audience List</Heading>
                 {props.audienceEntries.map((entry: AudienceEntry, i: number) => (
                     <>
-                        {i === 60 && <WaitCancelBox />}
+                        {i === 20 && <WaitCancelBox />}
                         <AudienceEntryBox key={entry.id} entry={entry} />
                     </>
                 ))}
