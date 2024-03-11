@@ -1,6 +1,6 @@
+import { BaseBox, SimpleMotionBox } from '@/components/box';
 import { Box, Center, HStack, Heading, Img, Spacer, Text, VStack } from '@chakra-ui/react';
 
-import { SimpleMotionBox } from '@/components/box';
 import InstagramButton from '@/components/instagram';
 import { BackLinkBox } from '@/components/linkbox';
 import { NormalLogo } from '@/components/logo';
@@ -11,7 +11,8 @@ export default function Concept() {
             <Box>
                 <NormalLogo />
                 <Box h={100}></Box>
-                <SimpleMotionBox title="Concept">
+                <BaseBox>
+                    <Heading>Concept</Heading>
                     <Center textAlign="center">
                         <VStack>
                             <Heading fontSize="lg" mt="2" textDecoration="underline">
@@ -43,58 +44,61 @@ export default function Concept() {
                             </Text>
                         </VStack>
                     </Center>
-                </SimpleMotionBox>
-                <SimpleMotionBox title="Message">
-                    <Img src="kakato.jpg" alt="kakato" />
-                    <Heading fontSize="md" fontWeight="900" mt="1">
-                        Kakato
-                    </Heading>
-                    <Box fontSize="sm" mx="3">
-                        <Text>「WISHを変えられる」</Text>
-                        <Text>
-                            ありがたいことにそのような言葉をかけてもらえることがありましたが、行動できずにいました。
-                            そんな自分の転機になった12公から多くをいただいたように、何かを通してお返しをしたいと思うようになりました。
-                        </Text>
-                        <Text>
-                            その答えをカタチにしたのが、本イベントです。
-                            経験、プロップス、熱量、遼太郎をはじめとする最高の運営陣と共に込められるだけ込めました。
-                            自分にとってもWISHにとっても、これは大きな挑戦であり可能性です。
-                        </Text>
-                        <Text>
-                            今までにない新しい身内イベントNExus Over、記念すべきvol.
-                            1は大都会六本木にて開催。現役OBG問わずお待ちしております。
-                        </Text>
+                </BaseBox>
+                <BaseBox>
+                    <Heading>Message</Heading>
+                    <SimpleMotionBox>
+                        <Img src="kakato.jpg" alt="kakato" />
+                        <Heading fontSize="md" fontWeight="900" mt="1">
+                            Kakato
+                        </Heading>
+                        <Box fontSize="sm">
+                            <Text>「WISHを変えられる」</Text>
+                            <Text>
+                                ありがたいことにそのような言葉をかけてもらえることがありましたが、行動できずにいました。
+                                そんな自分の転機になった12公から多くをいただいたように、何かを通してお返しをしたいと思うようになりました。
+                            </Text>
+                            <Text>
+                                その答えをカタチにしたのが、本イベントです。
+                                経験、プロップス、熱量、遼太郎をはじめとする最高の運営陣と共に込められるだけ込めました。
+                                自分にとってもWISHにとっても、これは大きな挑戦であり可能性です。
+                            </Text>
+                            <Text>
+                                今までにない新しい身内イベントNExus Over、記念すべきvol.
+                                1は大都会六本木にて開催。現役OBG問わずお待ちしております。
+                            </Text>
+                            <HStack>
+                                <Spacer />
+                                <InstagramButton url="https://www.instagram.com/k_t_w_l/" />
+                            </HStack>
+                        </Box>
+                    </SimpleMotionBox>
+                    <SimpleMotionBox>
+                        <Img src="rol.jpg" alt="rol" />
+                        <Heading fontSize="md" fontWeight="900" mt="1">
+                            ROL
+                        </Heading>
+                        <Box fontSize="sm">
+                            <Text>
+                                現役時代はほぼサークルの中で生きてきました。
+                                食わず嫌いというか、出不精というか、そんなぼんやりとした理由だった気がします。
+                                引退して外のつながりも作り始めて、それもまた刺激的で楽しいと気づきました。
+                            </Text>
+                            <Text>
+                                WISHの空気感って温かくて居心地がよくて、みんなも人間が好きで居続けているのかなと思っています。
+                                ダンスはどこでも誰とでもできますが、WISHを選んでいるのはそれぞれ理由があるはずです。
+                            </Text>
+                            <Text>
+                                その理由を大切にしながら、さらに良い刺激を得られるように、このイベントを開催します。
+                                このイベントが、みんなの熱量を増やす燃料になってほしいと思っています。
+                            </Text>
+                        </Box>
                         <HStack>
                             <Spacer />
-                            <InstagramButton url="https://www.instagram.com/k_t_w_l/" />
+                            <InstagramButton url="https://www.instagram.com/rol_rlasic/" />
                         </HStack>
-                    </Box>
-                </SimpleMotionBox>
-                <SimpleMotionBox title="Message">
-                    <Img src="rol.jpg" alt="rol" />
-                    <Heading fontSize="md" fontWeight="900" mt="1">
-                        ROL
-                    </Heading>
-                    <Box fontSize="sm" mx="3">
-                        <Text>
-                            現役時代はほぼサークルの中で生きてきました。
-                            食わず嫌いというか、出不精というか、そんなぼんやりとした理由だった気がします。
-                            引退して外のつながりも作り始めて、それもまた刺激的で楽しいと気づきました。
-                        </Text>
-                        <Text>
-                            WISHの空気感って温かくて居心地がよくて、みんなも人間が好きで居続けているのかなと思っています。
-                            ダンスはどこでも誰とでもできますが、WISHを選んでいるのはそれぞれ理由があるはずです。
-                        </Text>
-                        <Text>
-                            その理由を大切にしながら、さらに良い刺激を得られるように、このイベントを開催します。
-                            このイベントが、みんなの熱量を増やす燃料になってほしいと思っています。
-                        </Text>
-                    </Box>
-                    <HStack>
-                        <Spacer />
-                        <InstagramButton url="https://www.instagram.com/rol_rlasic/" />
-                    </HStack>
-                </SimpleMotionBox>
+                    </SimpleMotionBox>
+                </BaseBox>
                 <Box h={50}></Box>
             </Box>
             <BackLinkBox />

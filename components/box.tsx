@@ -3,7 +3,7 @@ import { Heading, LinkBox } from '@chakra-ui/react';
 import { ScrollOnce } from './motion';
 
 function BaseBox(props: { width?: string; children?: React.ReactNode }) {
-    const width = props.width || '90%';
+    const width = props.width || '92%';
     return (
         <LinkBox
             as="article"
@@ -29,11 +29,15 @@ function SimpleColoredMotionBox(props: { title: string; children?: React.ReactNo
     );
 }
 
-function SimpleMotionBox(props: { title: string; children?: React.ReactNode }) {
+function SimpleMotionBox(props: {
+    title?: string;
+    titleSize?: string;
+    children?: React.ReactNode;
+}) {
     return (
         <ScrollOnce>
             <BaseBox>
-                <Heading>{props.title}</Heading>
+                {props.title && <Heading fontSize={props.titleSize}>{props.title}</Heading>}
                 {props.children}
             </BaseBox>
         </ScrollOnce>
