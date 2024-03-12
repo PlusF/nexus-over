@@ -58,22 +58,25 @@ export default function Home() {
                 </Heading>
             </HomeLinkBox>
 
-            <HomeLinkBox href="/entry" title="Entry">
+            <HomeLinkBox href="/entry" title="Entry" linkText="Entry now!">
                 <Heading fontSize="md" mt="2">
-                    エントリー・観覧
+                    バトル・観覧エントリー
                 </Heading>
             </HomeLinkBox>
 
             <SimpleMotionBox title="Teaser Movie">
                 <Box fontSize="sm" mt="2">
-                    2024/3/9 卒業公演本番にて準告知映像を公開。
+                    3/9 卒業公演にて準告知映像を公開。
                     <br />
-                    2024/4/13 新歓公演本番にて本告知映像を公開。
+                    4/13 新歓公演にて本告知映像を公開。
                 </Box>
+                <Heading fontSize="md" mt="2">
+                    準告知映像
+                </Heading>
                 <Center>
                     <iframe
                         width="250"
-                        src="https://www.youtube.com/embed/9LS1Ia2j4sA?si=zYk68WZ0eVu68Ro_"
+                        src="https://www.youtube.com/embed/pg7xLd-SXaI?si=Za155YUkDc-4zloj"
                         title="YouTube video player"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     ></iframe>
