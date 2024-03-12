@@ -76,7 +76,7 @@ export default function Concept() {
                     <SimpleMotionBox>
                         <Img src="rol.jpg" alt="rol" />
                         <Heading fontSize="md" fontWeight="900" mt="1">
-                            ROL
+                            RoL
                         </Heading>
                         <Box fontSize="sm">
                             <Text>

@@ -2,6 +2,7 @@ import { BaseBox, SimpleMotionBox } from '@/components/box';
 import { Box, Center, Grid, GridItem, Heading, Img, Text } from '@chakra-ui/react';
 
 import { BackLinkBox } from '@/components/linkbox';
+import LinkButton from '@/components/linkbutton';
 import { NormalLogo } from '@/components/logo';
 
 function Showcase(props: { title: string; img: string; member: string[] }) {
@@ -29,19 +30,29 @@ export default function Contents() {
                 <Box h={100}></Box>
                 <BaseBox>
                     <Heading>Battle</Heading>
-                    <SimpleMotionBox title="予選サイファー">
+                    <SimpleMotionBox title="予選サイファー" titleSize="xl">
                         <Text fontSize="md" px="2">
                             予選は10人程度のサイファー形式で行い、45秒1ムーブでジャッジに得点をつけてもらいます。
                         </Text>
+                        <LinkButton href="casts#judge">
+                            <Text mr="1" color="white" fontWeight="300">
+                                &rarr; Judges
+                            </Text>
+                        </LinkButton>
                         <Img src="battle-rule1.png" alt="battle rule" mt="2" />
                     </SimpleMotionBox>
-                    <SimpleMotionBox title="本戦トーナメント">
+                    <SimpleMotionBox title="本戦トーナメント" titleSize="xl">
                         <Text fontSize="md" px="2">
                             2人のジャッジの合計得点の上位13名はそのまま本戦トーナメントに進出します。
                             残り3枠は、予選14~16位がゲストバトラーをコールアウトし、勝者が出場権を獲得します。
                             本戦は準決勝まで45秒1ムーブ、決勝は45分2ムーブです。
                             優勝者には賞金とウィナーボードが贈られます。
                         </Text>
+                        <LinkButton href="casts#gb">
+                            <Text mr="1" color="white" fontWeight="300">
+                                &rarr; Guest battlers
+                            </Text>
+                        </LinkButton>
                         <Img src="battle-rule2.png" alt="battle rule" mt="2" />
                     </SimpleMotionBox>
                 </BaseBox>
@@ -50,7 +61,7 @@ export default function Contents() {
                     <Showcase
                         title="WishTrain"
                         img="logo_white.png"
-                        member={['5th', 'Lock', '部長']}
+                        member={['5th', 'Lock', '部長', '~12th', '', '数名']}
                     />
                     <Showcase
                         title="岩永"
