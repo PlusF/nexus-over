@@ -1,5 +1,5 @@
 import { BattleEntryBox, WaitCancelBox } from '@/components/entrybox';
-import { Box, Heading } from '@chakra-ui/react';
+import { Box, HStack, Heading, Spacer } from '@chakra-ui/react';
 
 import { BaseBox } from '@/components/box';
 import { BackLinkBox } from '@/components/linkbox';
@@ -23,6 +23,10 @@ export default function BattleEntryList(props: EntryListProps) {
                         <BattleEntryBox key={entry.id} entry={entry} />
                     </>
                 ))}
+                <HStack mt="5">
+                    <Spacer />
+                    <Heading fontSize="sm">以上{props.battleEntries.length}名</Heading>
+                </HStack>
             </BaseBox>
             <Box h={50}></Box>
             <BackLinkBox href="/entry" />
