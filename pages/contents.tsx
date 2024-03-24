@@ -32,7 +32,7 @@ export default function Contents() {
                     <Heading>Battle</Heading>
                     <SimpleMotionBox title="予選サイファー" titleSize="xl">
                         <Text fontSize="md" px="2">
-                            予選は10人程度のサイファー形式で行い、45秒1ムーブでジャッジに得点をつけてもらいます。
+                            予選は10人程度のサイファー形式で行い、40秒1ムーブでジャッジに得点をつけてもらいます。
                         </Text>
                         <LinkButton href="casts#judge">
                             <Text mr="1" color="white" fontWeight="300">
@@ -43,9 +43,10 @@ export default function Contents() {
                     </SimpleMotionBox>
                     <SimpleMotionBox title="本戦トーナメント" titleSize="xl">
                         <Text fontSize="md" px="2">
-                            2人のジャッジの合計得点の上位13名はそのまま本戦トーナメントに進出します。
+                            2人のジャッジの合計得点の上位9名はそのまま本戦トーナメントに進出します。
+                            さらに44、45代から得点上位2人、43代から得点上位2人が本戦に進出します。
                             残り3枠は、予選14~16位がゲストバトラーをコールアウトし、勝者が出場権を獲得します。
-                            本戦は準決勝まで45秒1ムーブ、決勝は45秒2ムーブです。
+                            本戦はBEST8まで40秒1ムーブ、準決勝は45秒1ムーブ、決勝は45秒2ムーブです。
                             優勝者には賞金とウィナーボードが贈られます。
                         </Text>
                         <LinkButton href="casts#gb">
