@@ -51,7 +51,9 @@ export default function Location() {
                             <TimeTableBox time="16:15" content="Wild Card Battle" />
                             <TimeTableBox time="16:30" content="Best16" />
                             <TimeTableBox time="17:00" content="Showcase③" />
-                            <TimeTableBox time="17:15" content="Best8~" />
+                            <TimeTableBox time="17:15" content="Best8" />
+                            <TimeTableBox time="17:40" content="Judge Move" />
+                            <TimeTableBox time="18:00" content="BEST4~" />
                             <TimeTableBox time="18:50" content="DJ Time" />
                             <TimeTableBox time="19:30" content="Close" />
                         </VStack>
