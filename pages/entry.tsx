@@ -91,7 +91,10 @@ function SubmitButton(props: { text: string; onClick: () => void; isLoading?: bo
         <GridItem colSpan={2} textAlign="center" mt="5">
             <Button
                 size="lg"
-                colorScheme="gray"
+                colorScheme="black"
+                bg="black"
+                color="white"
+                rounded="unset"
                 onClick={props.onClick}
                 isLoading={props.isLoading}
             >
@@ -120,13 +123,27 @@ function SuccessModal(props: {
                 </ModalBody>
 
                 <ModalFooter gap="2">
-                    <Button variant="outline" as={Link} href={props.href}>
+                    <Button
+                        variant="outline"
+                        as={Link}
+                        href={props.href}
+                        bg="black"
+                        color="white"
+                        rounded="unset"
+                    >
                         Entry List
                     </Button>
-                    <Button variant="outline" as={Link} href={'/'}>
+                    <Button
+                        variant="outline"
+                        as={Link}
+                        href={'/'}
+                        bg="black"
+                        color="white"
+                        rounded="unset"
+                    >
                         Home
                     </Button>
-                    <Button mr={3} onClick={props.onClose}>
+                    <Button mr={3} onClick={props.onClose} rounded="unset">
                         Close
                     </Button>
                 </ModalFooter>
@@ -145,7 +162,9 @@ function ErrorModal(props: { isOpen: boolean; onClose: () => void }) {
                 <ModalBody>未入力の項目があります。全ての項目を入力してください。</ModalBody>
 
                 <ModalFooter>
-                    <Button onClick={props.onClose}>Close</Button>
+                    <Button onClick={props.onClose} rounded="unset">
+                        Close
+                    </Button>
                 </ModalFooter>
             </ModalContent>
         </Modal>
@@ -203,7 +222,7 @@ function BattleEntry() {
                     <br />
                     ※枠が埋まるとキャンセル待ちとなります。
                 </Description>
-                <SubmitButton text="Entry" onClick={handleEntry} isLoading={isLoading} />
+                <SubmitButton text="Entry &rarr;" onClick={handleEntry} isLoading={isLoading} />
             </Grid>
             <SuccessModal
                 isOpen={isOpenSuccess}
@@ -267,7 +286,7 @@ function AudienceEntry() {
                     <br />
                     ※枠が埋まるとキャンセル待ちとなります。
                 </Description>
-                <SubmitButton text="申込" onClick={handleEntry} isLoading={isLoading} />
+                <SubmitButton text="申込 &rarr;" onClick={handleEntry} isLoading={isLoading} />
             </Grid>
             <SuccessModal
                 isOpen={isOpenSuccess}

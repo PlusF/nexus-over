@@ -36,7 +36,7 @@ export default function Contents() {
                         </Text>
                         <LinkButton href="casts#judge">
                             <Text mr="1" color="white" fontWeight="300">
-                                &rarr; Judges
+                                Judges &rarr;
                             </Text>
                         </LinkButton>
                         <Img src="battle-rule1.png" alt="battle rule" mt="2" />
@@ -57,14 +57,14 @@ export default function Contents() {
                         </Text>
                         <LinkButton href="casts#gb">
                             <Text mr="1" color="white" fontWeight="300">
-                                &rarr; Guest battlers
+                                Guest battlers &rarr;
                             </Text>
                         </LinkButton>
                         <Img src="battle-rule2.png" alt="battle rule" mt="2" />
                     </SimpleMotionBox>
                     <LinkButton href="location#timetable">
                         <Text mr="1" color="white" fontWeight="300">
-                            &rarr; Time Table
+                            Time Table &rarr;
                         </Text>
                     </LinkButton>
                 </BaseBox>
@@ -128,7 +128,7 @@ export default function Contents() {
                     />
                     <LinkButton href="location#timetable">
                         <Text mr="1" color="white" fontWeight="300">
-                            &rarr; Time Table
+                            Time Table &rarr;
                         </Text>
                     </LinkButton>
                 </BaseBox>

@@ -60,7 +60,7 @@ export default function Location() {
                     </Center>
                     <LinkButton href="contents">
                         <Text mr="1" color="white" fontWeight="300">
-                            &rarr; Contents
+                            Contents &rarr;
                         </Text>
                     </LinkButton>
                 </SimpleMotionBox>

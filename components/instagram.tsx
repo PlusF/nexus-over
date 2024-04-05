@@ -9,10 +9,10 @@ export default function InstagramButton(props: { url: string; backgroundColor?: 
     const backgroundColor = props.backgroundColor || 'black';
     return (
         <Button onClick={openInstagram} rounded="none" backgroundColor={backgroundColor}>
+            <FiInstagram color="white" />
             <Text mr="1" color="white">
                 &rarr;
             </Text>
-            <FiInstagram color="white" />
         </Button>
     );
 }

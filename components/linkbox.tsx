@@ -1,4 +1,5 @@
 import { Box, Heading, LinkBox, LinkOverlay } from '@chakra-ui/react';
+
 import Link from 'next/link';
 import { ScrollOnce } from './motion';
 
@@ -45,7 +46,7 @@ function HomeLinkBox(props: {
     const linkText = props.linkText || 'Read more';
     return (
         <ScrollOnce enableTap>
-            <BaseLinkBox href={props.href} linkText={'→ ' + linkText} width="90%">
+            <BaseLinkBox href={props.href} linkText={linkText + ' →'} width="90%">
                 <Heading>{props.title}</Heading>
                 {props.children}
             </BaseLinkBox>

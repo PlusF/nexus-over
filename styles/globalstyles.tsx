@@ -23,6 +23,7 @@ const theme = extendTheme({
             100: '#000000',
             900: '#ffffff',
         },
+        black: '#000',
     },
 });
 

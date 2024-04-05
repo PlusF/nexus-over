@@ -68,7 +68,7 @@ export default function Home() {
                 <Box fontSize="sm" mt="2">
                     3/9 卒業公演にて準告知映像を公開。
                     <br />
-                    4/13 新歓公演にて本告知映像を公開。
+                    4/xx 本告知映像を公開予定。
                 </Box>
                 <Heading fontSize="md" mt="2">
                     準告知映像
