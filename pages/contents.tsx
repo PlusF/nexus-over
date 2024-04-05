@@ -62,15 +62,11 @@ export default function Contents() {
                         </LinkButton>
                         <Img src="battle-rule2.png" alt="battle rule" mt="2" />
                     </SimpleMotionBox>
-                    <SimpleMotionBox title="Time Table" titleSize="xl">
-                        <Center>
-                            <LinkButton href="location#timetable">
-                                <Text mr="1" color="white" fontWeight="300">
-                                    &rarr; Time Table
-                                </Text>
-                            </LinkButton>
-                        </Center>
-                    </SimpleMotionBox>
+                    <LinkButton href="location#timetable">
+                        <Text mr="1" color="white" fontWeight="300">
+                            &rarr; Time Table
+                        </Text>
+                    </LinkButton>
                 </BaseBox>
                 <BaseBox>
                     <Heading>Showcases</Heading>
@@ -130,15 +126,11 @@ export default function Contents() {
                         img="logo_white.png"
                         member={['45th', 'House', 'カラシ', '45th', 'House', 'ネコバス']}
                     />
-                    <SimpleMotionBox title="Time Table" titleSize="xl">
-                        <Center>
-                            <LinkButton href="location#timetable">
-                                <Text mr="1" color="white" fontWeight="300">
-                                    &rarr; Time Table
-                                </Text>
-                            </LinkButton>
-                        </Center>
-                    </SimpleMotionBox>
+                    <LinkButton href="location#timetable">
+                        <Text mr="1" color="white" fontWeight="300">
+                            &rarr; Time Table
+                        </Text>
+                    </LinkButton>
                 </BaseBox>
                 <Box h={50}></Box>
             </Box>

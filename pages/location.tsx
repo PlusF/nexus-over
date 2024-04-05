@@ -2,6 +2,7 @@ import { AspectRatio, Box, Center, Heading, Text, VStack } from '@chakra-ui/reac
 
 import { SimpleMotionBox } from '@/components/box';
 import { BackLinkBox } from '@/components/linkbox';
+import LinkButton from '@/components/linkbutton';
 import { NormalLogo } from '@/components/logo';
 import { TimeTableBox } from '@/components/timetablebox';
 
@@ -37,8 +38,8 @@ export default function Location() {
                     </AspectRatio>
                 </SimpleMotionBox>
                 <SimpleMotionBox title="Time Table">
-                    <Heading id="timetable" fontSize="md" mt="2">
-                        2024/6/1(Sat.)
+                    <Heading id="timetable" fontSize="xl" m="2">
+                        <Center>2024/6/1(Sat.)</Center>
                     </Heading>
                     <Center>
                         <VStack>
@@ -55,6 +56,11 @@ export default function Location() {
                             <TimeTableBox time="19:30" content="Close" />
                         </VStack>
                     </Center>
+                    <LinkButton href="contents">
+                        <Text mr="1" color="white" fontWeight="300">
+                            &rarr; Contents
+                        </Text>
+                    </LinkButton>
                 </SimpleMotionBox>
                 <Box h={50}></Box>
             </Box>
