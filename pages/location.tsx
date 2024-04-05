@@ -1,8 +1,9 @@
-import { AspectRatio, Box, Heading, Text } from '@chakra-ui/react';
+import { AspectRatio, Box, Center, Heading, Text, VStack } from '@chakra-ui/react';
 
 import { SimpleMotionBox } from '@/components/box';
 import { BackLinkBox } from '@/components/linkbox';
 import { NormalLogo } from '@/components/logo';
+import { TimeTableBox } from '@/components/timetablebox';
 
 export default function Location() {
     return (
@@ -36,12 +37,26 @@ export default function Location() {
                     </AspectRatio>
                 </SimpleMotionBox>
                 <SimpleMotionBox title="Time Table">
-                    <Heading fontSize="md" mt="2">
+                    <Heading id="timetable" fontSize="md" mt="2">
                         2024/6/1(Sat.)
                     </Heading>
-                    Coming soon...
+                    <Center>
+                        <VStack>
+                            <TimeTableBox time="13:00" content="Open&受付開始" />
+                            <TimeTableBox time="13:45" content="Start" />
+                            <TimeTableBox time="13:55" content="Showcase①" />
+                            <TimeTableBox time="14:20" content="Battle予選" />
+                            <TimeTableBox time="16:00" content="Showcase②" />
+                            <TimeTableBox time="16:15" content="Wild Card Battle" />
+                            <TimeTableBox time="16:30" content="Best16" />
+                            <TimeTableBox time="17:00" content="Showcase③" />
+                            <TimeTableBox time="17:15" content="Best8~" />
+                            <TimeTableBox time="18:50" content="DJ Time" />
+                            <TimeTableBox time="19:30" content="Close" />
+                        </VStack>
+                    </Center>
                 </SimpleMotionBox>
-                <Box h={150}></Box>
+                <Box h={50}></Box>
             </Box>
             <BackLinkBox />
         </>
