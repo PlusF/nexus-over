@@ -20,12 +20,12 @@ import {
 import { Dispatch, SetStateAction, useState } from 'react';
 
 import { BaseBox } from '@/components/box';
-import { NormalLogo } from '@/components/logo';
 import Link from 'next/link';
+import { NormalLogo } from '@/components/logo';
 
 const generations = [...Array(46)].map((_, i) => String(i + 1));
 const genres = ['Hiphop', 'Pop', 'Lock', 'Breaking', 'House', 'Jazz', 'Waack', 'Freestyle'];
-const limitedGenres = ['Hiphop', 'Pop', 'Lock', 'Breaking', 'House', 'Jazz', 'Waack'];
+const limitedGenres = ['Hiphop', 'Pop', 'Lock', 'Breaking', 'House', 'Jazz', 'Waack', 'その他'];
 
 function EntrySelect(props: {
     title: string;
@@ -238,7 +238,8 @@ function BattleEntry() {
 
 function AudienceEntry() {
     const [generation, setGeneration] = useState<string>('');
-    const generations = [...Array(46)].map((_, i) => String(i + 1));
+    let generations = [...Array(46)].map((_, i) => String(i + 1));
+    generations.push('その他');
     const [genre, setGenre] = useState<string>('');
     const [name, setName] = useState<string>('');
     const {
