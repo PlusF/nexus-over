@@ -20,8 +20,8 @@ import {
 import { Dispatch, SetStateAction, useState } from 'react';
 
 import { BaseBox } from '@/components/box';
-import Link from 'next/link';
 import { NormalLogo } from '@/components/logo';
+import Link from 'next/link';
 
 const generations = [...Array(46)].map((_, i) => String(i + 1));
 const genres = ['Hiphop', 'Pop', 'Lock', 'Breaking', 'House', 'Jazz', 'Waack', 'Freestyle'];
@@ -220,6 +220,8 @@ function BattleEntry() {
                     <br />
                     ※エントリー上限：60枠
                     <br />
+                    ※過去にWISHに在籍歴がある方はエントリー可能。
+                    <br />
                     ※枠が埋まるとキャンセル待ちとなります。
                 </Description>
                 <SubmitButton text="Entry &rarr;" onClick={handleEntry} isLoading={isLoading} />
@@ -284,6 +286,8 @@ function AudienceEntry() {
                     ※観覧料2000円(ドリンク2杯込み)
                     <br />
                     ※観覧上限：20枠
+                    <br />
+                    ※WISH外部の方も観覧可能です。
                     <br />
                     ※枠が埋まるとキャンセル待ちとなります。
                 </Description>
