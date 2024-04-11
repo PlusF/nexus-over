@@ -1,9 +1,9 @@
 import { Box, Center, Heading } from '@chakra-ui/react';
 
-import { SimpleMotionBox } from '@/components/box';
-import { HomeLinkBox } from '@/components/linkbox';
 import { AnimatedLogo } from '@/components/logo';
 import Head from 'next/head';
+import { HomeLinkBox } from '@/components/linkbox';
+import { SimpleMotionBox } from '@/components/box';
 
 export default function Home() {
     return (
@@ -68,7 +68,7 @@ export default function Home() {
                 <Box fontSize="sm" mt="2">
                     3/9 卒業公演にて準告知映像を公開。
                     <br />
-                    4/xx 本告知映像を公開予定。
+                    4/21 本告知映像を公開予定。
                 </Box>
                 <Heading fontSize="md" mt="2">
                     準告知映像
