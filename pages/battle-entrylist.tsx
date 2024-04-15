@@ -11,6 +11,7 @@ type EntryListProps = {
 };
 
 export default function BattleEntryList(props: EntryListProps) {
+    props.battleEntries.sort((a, b) => a.id - b.id);
     return (
         <>
             <NormalLogo />

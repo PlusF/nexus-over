@@ -11,6 +11,7 @@ type EntryListProps = {
 };
 
 export default function AudienceEntryList(props: EntryListProps) {
+    props.audienceEntries.sort((a, b) => a.id - b.id);
     return (
         <>
             <NormalLogo />
