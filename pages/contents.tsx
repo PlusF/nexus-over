@@ -72,12 +72,12 @@ export default function Contents() {
                     <Heading>Showcases</Heading>
                     <Showcase
                         title="WishTrain"
-                        img="logo_white.png"
+                        img="WishTrain.jpg"
                         member={['5th', 'Lock', '部長', '~12th', '', '数名']}
                     />
                     <Showcase
                         title="岩永"
-                        img="logo_white.png"
+                        img="岩永_1.jpg"
                         member={[
                             '38th',
                             'Lock',
@@ -95,12 +95,17 @@ export default function Contents() {
                     />
                     <Showcase
                         title="R:Lasic"
-                        img="logo_white.png"
+                        img="RLasic_1.jpg"
                         member={['40th', 'House', 'RoL', '40th', 'Pop', 'hiro']}
                     />
                     <Showcase
+                        title="全"
+                        img="全_1.jpg"
+                        member={['43rd', 'House', 'Eric', '43rd', 'Hiphop', 'Lisa-Lisa']}
+                    />
+                    <Showcase
                         title="La poire × Tear Wave"
-                        img="logo_white.png"
+                        img="La poire x Tear Wave_2.jpg"
                         member={[
                             '43rd',
                             'Hiphop',
@@ -117,13 +122,8 @@ export default function Contents() {
                         ]}
                     />
                     <Showcase
-                        title="全"
-                        img="logo_white.png"
-                        member={['43rd', 'House', 'Eric', '43rd', 'Hiphop', 'Lisa-Lisa']}
-                    />
-                    <Showcase
                         title="nifTy"
-                        img="logo_white.png"
+                        img="nifTy_1.jpg"
                         member={['45th', 'House', 'カラシ', '45th', 'House', 'ネコバス']}
                     />
                     <LinkButton href="location#timetable">
