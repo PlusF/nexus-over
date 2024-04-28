@@ -100,7 +100,7 @@ export default function Contents() {
                     />
                     <Showcase
                         title="La poire × Tear Wave"
-                        img="La poire x Tear Wave.jpg"
+                        img="LaPoirexTearWave.jpg"
                         member={[
                             '43rd',
                             'Hiphop',
