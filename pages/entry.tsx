@@ -20,8 +20,8 @@ import {
 import { Dispatch, SetStateAction, useState } from 'react';
 
 import { BaseBox } from '@/components/box';
-import Link from 'next/link';
 import { NormalLogo } from '@/components/logo';
+import Link from 'next/link';
 
 const generations = [...Array(46)].map((_, i) => String(i + 1));
 const genres = ['Hiphop', 'Pop', 'Lock', 'Breaking', 'House', 'Jazz', 'Waack', 'Freestyle'];
@@ -223,6 +223,8 @@ function BattleEntry() {
                     ※過去にWISHに在籍歴がある方はエントリー可能。
                     <br />
                     ※枠が埋まるとキャンセル待ちとなります。
+                    <br />
+                    ※5/25からキャンセル料が発生いたします。
                 </Description>
                 <SubmitButton text="Entry &rarr;" onClick={handleEntry} isLoading={isLoading} />
             </Grid>
