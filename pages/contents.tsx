@@ -77,7 +77,7 @@ export default function Contents() {
                     />
                     <Showcase
                         title="岩永"
-                        img="岩永_1.jpg"
+                        img="岩永.jpg"
                         member={[
                             '38th',
                             'Lock',
@@ -95,17 +95,12 @@ export default function Contents() {
                     />
                     <Showcase
                         title="R:Lasic"
-                        img="RLasic_1.jpg"
+                        img="RLasic.jpg"
                         member={['40th', 'House', 'RoL', '40th', 'Pop', 'hiro']}
                     />
                     <Showcase
-                        title="全"
-                        img="全_1.jpg"
-                        member={['43rd', 'House', 'Eric', '43rd', 'Hiphop', 'Lisa-Lisa']}
-                    />
-                    <Showcase
                         title="La poire × Tear Wave"
-                        img="La poire x Tear Wave_2.jpg"
+                        img="La poire x Tear Wave.jpg"
                         member={[
                             '43rd',
                             'Hiphop',
@@ -122,8 +117,13 @@ export default function Contents() {
                         ]}
                     />
                     <Showcase
+                        title="全"
+                        img="全.jpg"
+                        member={['43rd', 'House', 'Eric', '43rd', 'Hiphop', 'Lisa-Lisa']}
+                    />
+                    <Showcase
                         title="nifTy"
-                        img="nifTy_1.jpg"
+                        img="nifTy.jpg"
                         member={['45th', 'House', 'カラシ', '45th', 'House', 'ネコバス']}
                     />
                     <LinkButton href="location#timetable">
