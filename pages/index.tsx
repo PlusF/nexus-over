@@ -1,9 +1,9 @@
 import { Box, Center, Heading } from '@chakra-ui/react';
 
+import { SimpleMotionBox } from '@/components/box';
+import { HomeLinkBox } from '@/components/linkbox';
 import { AnimatedLogo } from '@/components/logo';
 import Head from 'next/head';
-import { HomeLinkBox } from '@/components/linkbox';
-import { SimpleMotionBox } from '@/components/box';
 
 export default function Home() {
     return (
@@ -64,12 +64,7 @@ export default function Home() {
                 </Heading>
             </HomeLinkBox>
 
-            <SimpleMotionBox title="Teaser Movie">
-                <Box fontSize="sm" mt="2">
-                    3/9 卒業公演にて準告知映像を公開。
-                    <br />
-                    4/21 本告知映像を公開予定。
-                </Box>
+            <SimpleMotionBox title="Movie">
                 <Heading fontSize="md" mt="2">
                     準告知映像
                 </Heading>
@@ -77,6 +72,17 @@ export default function Home() {
                     <iframe
                         width="250"
                         src="https://www.youtube.com/embed/pg7xLd-SXaI?si=Za155YUkDc-4zloj"
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    ></iframe>
+                </Center>
+                <Heading fontSize="md" mt="2">
+                    本告知映像
+                </Heading>
+                <Center>
+                    <iframe
+                        width="250"
+                        src="https://www.youtube.com/embed/6XTam5p9X80?si=FpdXTOiEM_5xhg8z"
                         title="YouTube video player"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     ></iframe>
