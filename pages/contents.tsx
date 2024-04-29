@@ -9,7 +9,7 @@ function Showcase(props: { title: string; img: string; member: string[] }) {
     return (
         <SimpleMotionBox title={props.title} titleSize="xl">
             <Center>
-                <Grid templateColumns="50px 80px 100px">
+                <Grid templateColumns="66px 70px 80px">
                     {props.member.map((m, i) => (
                         <GridItem key={i} colSpan={1}>
                             {m}
@@ -17,7 +17,7 @@ function Showcase(props: { title: string; img: string; member: string[] }) {
                     ))}
                 </Grid>
             </Center>
-            <Img src={props.img} alt="showcase2" />
+            <Img src={props.img} alt="showcase2" mt="5px" />
         </SimpleMotionBox>
     );
 }
@@ -73,7 +73,17 @@ export default function Contents() {
                     <Showcase
                         title="WishTrain"
                         img="WishTrain.jpg"
-                        member={['5th', 'Lock', '部長', '~12th', '', '数名']}
+                        member={[
+                            'Special',
+                            'Guest',
+                            '上島雪夫',
+                            '5th',
+                            'Lock',
+                            '部長',
+                            '3rd~15th',
+                            '',
+                            '12名',
+                        ]}
                     />
                     <Showcase
                         title="岩永"
