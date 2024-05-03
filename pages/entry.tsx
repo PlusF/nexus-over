@@ -20,8 +20,8 @@ import {
 import { Dispatch, SetStateAction, useState } from 'react';
 
 import { BaseBox } from '@/components/box';
-import { NormalLogo } from '@/components/logo';
 import Link from 'next/link';
+import { NormalLogo } from '@/components/logo';
 
 const generations = [...Array(46)].map((_, i) => String(i + 1));
 const genres = ['Hiphop', 'Pop', 'Lock', 'Breaking', 'House', 'Jazz', 'Waack', 'Freestyle'];
@@ -218,7 +218,7 @@ function BattleEntry() {
                 <Description>
                     ※エントリー料3500円(ドリンク2杯込み)
                     <br />
-                    ※エントリー上限：60枠
+                    ※エントリー上限：65枠
                     <br />
                     ※過去にWISHに在籍歴がある方はエントリー可能。
                     <br />

@@ -20,7 +20,7 @@ export default function BattleEntryList(props: EntryListProps) {
                 <Heading mb="5">Battle Entry List</Heading>
                 {props.battleEntries.map((entry: BattleEntry, i: number) => (
                     <>
-                        {i === 60 && <WaitCancelBox />}
+                        {i === 65 && <WaitCancelBox />}
                         <BattleEntryBox key={entry.id} entry={entry} />
                     </>
                 ))}
