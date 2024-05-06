@@ -29,7 +29,7 @@ export default function AudienceEntryList(props: EntryListProps) {
                     <Heading fontSize="sm">以上{props.audienceEntries.length}名</Heading>
                 </HStack>
             </BaseBox>
-            <Box h={600}></Box>
+            <Box h={50}></Box>
             <BackLinkBox href="/entry" />
         </>
     );
