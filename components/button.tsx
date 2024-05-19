@@ -1,37 +1,32 @@
-import { Box, BoxProps, HStack, LinkBox, LinkOverlay, Spacer } from '@chakra-ui/react';
+import { Button, ButtonProps, HStack, Spacer } from '@chakra-ui/react';
 
 import Link from 'next/link';
 
-interface ButtonProps extends BoxProps {
+interface RoundedButtonProps extends ButtonProps {
     href: string;
-    linkText: string;
     fixed?: boolean;
 }
 
-function RoundedButton(props: ButtonProps) {
+function RoundedButton(props: RoundedButtonProps) {
     return (
-        <LinkBox
-            size="lg"
+        <Button
+            as={Link}
+            fontSize={'xl'}
             color="white"
             borderColor={'white'}
             borderWidth={'1px'}
             backgroundColor={'#000000bb'}
-            p="2"
+            p="6"
             rounded="2xl"
             position={props.fixed ? 'fixed' : 'relative'}
             {...props}
         >
             {props.children}
-            <Box fontSize="lg">
-                <LinkOverlay as={Link} href={props.href}>
-                    {props.linkText}
-                </LinkOverlay>
-            </Box>
-        </LinkBox>
+        </Button>
     );
 }
 
-function RoundedButtonRight(props: ButtonProps) {
+function RoundedButtonRight(props: RoundedButtonProps) {
     return (
         <HStack>
             <Spacer />
@@ -42,7 +37,11 @@ function RoundedButtonRight(props: ButtonProps) {
 
 function TopButton(props: { href?: string }) {
     const href = props.href || '/';
-    return <RoundedButton href={href} linkText="< Top" fixed left="50" bottom="70" />;
+    return (
+        <RoundedButton href={href} fixed left="50" bottom="70">
+            &lt;
+        </RoundedButton>
+    );
 }
 
 export { RoundedButton, RoundedButtonRight, TopButton };

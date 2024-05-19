@@ -1,7 +1,7 @@
-import { NeoBox } from '@/components/box';
 import { RoundedButtonRight, TopButton } from '@/components/button';
 import { AspectRatio, Box, Center, Heading, Text, VStack } from '@chakra-ui/react';
 
+import { NeoBox } from '@/components/box';
 import { NormalLogo } from '@/components/logo';
 import { TimeTableBox } from '@/components/timetablebox';
 
@@ -56,7 +56,7 @@ export default function Location() {
                         <TimeTableBox time="19:30" content="Close" />
                     </VStack>
                 </Center>
-                <RoundedButtonRight href="contents" linkText="Contents >" />
+                <RoundedButtonRight href="contents">Contents &gt;</RoundedButtonRight>
             </NeoBox>
             <TopButton />
         </>

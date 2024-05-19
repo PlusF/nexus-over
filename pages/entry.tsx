@@ -318,9 +318,9 @@ export default function Entry() {
                 <AudienceEntry />
             </Box>
             <Box h={10}></Box>
-            <RoundedButton href="/battle-entrylist" linkText="Battle Entry List >" />
+            <RoundedButton href="/battle-entrylist">Battle Entry List &gt;</RoundedButton>
             <Box h={10}></Box>
-            <RoundedButton href="/audience-entrylist" linkText="観覧 Entry List >" />
+            <RoundedButton href="/audience-entrylist">Audience Entry List &gt;</RoundedButton>
             <TopButton />
         </>
     );

@@ -59,7 +59,7 @@ function NeoBoxWithButton(props: NeoBoxWithButtonProps) {
             <NeoBox title={props.title}>
                 {props.children}
                 <Box height={5}></Box>
-                <RoundedButtonRight href={props.href} linkText={linkText} />
+                <RoundedButtonRight href={props.href}>{linkText}</RoundedButtonRight>
             </NeoBox>
         </ScrollOnce>
     );

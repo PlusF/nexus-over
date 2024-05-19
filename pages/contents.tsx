@@ -32,7 +32,9 @@ export default function Contents() {
                         <Text fontSize="md" px="2">
                             予選は10人程度のサイファー形式で行い、40秒1ムーブでジャッジに得点をつけてもらいます。
                         </Text>
-                        <RoundedButtonRight href="casts#judge" linkText="Judges >" mt="2" />
+                        <RoundedButtonRight href="casts#judge" mt="2">
+                            Judges &gt;
+                        </RoundedButtonRight>
                         <Img src="battle-rule1.png" alt="battle rule" mt="2" />
                     </NeoBox>
                     <NeoBox title="本戦トーナメント" noBorder smaller>
@@ -49,10 +51,14 @@ export default function Contents() {
                             本戦はBEST8まで40秒1ムーブ、準決勝は45秒1ムーブ、決勝は45秒2ムーブです。
                             優勝者には賞金とウィナーボードが贈られます。
                         </Text>
-                        <RoundedButtonRight href="casts#gb" linkText="Guest battlers >" mt="2" />
+                        <RoundedButtonRight href="casts#gb" mt="2">
+                            Guest battlers &gt;
+                        </RoundedButtonRight>
                         <Img src="battle-rule2.png" alt="battle rule" mt="2" />
                     </NeoBox>
-                    <RoundedButtonRight href="location#timetable" linkText="Time Table >" />
+                    <RoundedButtonRight href="location#timetable">
+                        Time Table &gt;
+                    </RoundedButtonRight>
                 </NeoBox>
                 <NeoBox title="Showcases">
                     <Showcase
@@ -121,7 +127,9 @@ export default function Contents() {
                         img="nifTy.jpg"
                         member={['45th', 'House', 'カラシ', '45th', 'House', 'ネコバス']}
                     />
-                    <RoundedButtonRight href="location#timetable" linkText="Time Table >" />
+                    <RoundedButtonRight href="location#timetable">
+                        Time Table &gt;
+                    </RoundedButtonRight>
                 </NeoBox>
             </Box>
             <TopButton />
