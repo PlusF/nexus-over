@@ -1,8 +1,8 @@
-import { BaseBox, SimpleMotionBox } from '@/components/box';
 import { Box, Center, HStack, Heading, Img, Spacer, Text, VStack } from '@chakra-ui/react';
 
+import { NeoBox } from '@/components/box';
+import { TopButton } from '@/components/button';
 import InstagramButton from '@/components/instagram';
-import { BackLinkBox } from '@/components/linkbox';
 import { NormalLogo } from '@/components/logo';
 
 export default function Concept() {
@@ -11,8 +11,7 @@ export default function Concept() {
             <Box>
                 <NormalLogo />
                 <Box h={100}></Box>
-                <BaseBox>
-                    <Heading>Concept</Heading>
+                <NeoBox title="Concept">
                     <Center textAlign="center">
                         <VStack>
                             <Heading fontSize="lg" mt="2" textDecoration="underline">
@@ -44,14 +43,10 @@ export default function Concept() {
                             </Text>
                         </VStack>
                     </Center>
-                </BaseBox>
-                <BaseBox>
-                    <Heading>Message</Heading>
-                    <SimpleMotionBox>
-                        <Img src="kakato.jpg" alt="kakato" />
-                        <Heading fontSize="md" fontWeight="900" mt="1">
-                            Kakato
-                        </Heading>
+                </NeoBox>
+                <NeoBox title="Message">
+                    <Img src="kakato.jpg" alt="kakato" />
+                    <NeoBox title="Kakato" noBorder smaller>
                         <Box fontSize="sm">
                             <Text>「WISHを変えられる」</Text>
                             <Text>
@@ -72,12 +67,10 @@ export default function Concept() {
                                 <InstagramButton url="https://www.instagram.com/k_t_w_l/" />
                             </HStack>
                         </Box>
-                    </SimpleMotionBox>
-                    <SimpleMotionBox>
-                        <Img src="rol.jpg" alt="rol" />
-                        <Heading fontSize="md" fontWeight="900" mt="1">
-                            RoL
-                        </Heading>
+                    </NeoBox>
+                    <Box h={50}></Box>
+                    <Img src="rol.jpg" alt="rol" />
+                    <NeoBox title="RoL" noBorder smaller>
                         <Box fontSize="sm">
                             <Text>
                                 現役時代はほぼサークルの中で生きてきました。
@@ -97,11 +90,10 @@ export default function Concept() {
                             <Spacer />
                             <InstagramButton url="https://www.instagram.com/rol_rlasic/" />
                         </HStack>
-                    </SimpleMotionBox>
-                </BaseBox>
-                <Box h={50}></Box>
+                    </NeoBox>
+                </NeoBox>
             </Box>
-            <BackLinkBox />
+            <TopButton />
         </>
     );
 }

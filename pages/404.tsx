@@ -1,5 +1,5 @@
-import { SimpleMotionBox } from '@/components/box';
-import { BackLinkBox } from '@/components/linkbox';
+import { NeoBox } from '@/components/box';
+import { TopButton } from '@/components/button';
 import { NormalLogo } from '@/components/logo';
 import { Box } from '@chakra-ui/react';
 
@@ -8,9 +8,9 @@ export default function Custom404() {
         <>
             <NormalLogo />
             <Box h={100}></Box>
-            <SimpleMotionBox title="404">ページが見つかりませんでした。</SimpleMotionBox>
+            <NeoBox title="404">ページが見つかりませんでした。</NeoBox>
             <Box h={200}></Box>
-            <BackLinkBox />
+            <TopButton />
         </>
     );
 }

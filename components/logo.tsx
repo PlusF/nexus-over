@@ -1,19 +1,21 @@
 import { Box, Center } from '@chakra-ui/react';
 import { useScroll, useTransform } from 'framer-motion';
+
 import Link from 'next/link';
 import { ChakraBox } from './motion';
 
 function NormalLogo() {
     return (
-        <Box position="sticky" top={12} zIndex="docked">
+        <Box zIndex="docked">
             <Link href="/">
                 <Center>
-                    <Box position="absolute" fontSize="8xl" color="white">
+                    <Box position="absolute" top={3} fontSize="7xl" color="white">
                         O
                     </Box>
                     <Box
                         position="absolute"
-                        fontSize="7xl"
+                        top={5}
+                        fontSize="6xl"
                         color="black"
                         textShadow="0px 0px 5px #ffffff"
                     >
@@ -28,12 +30,11 @@ function NormalLogo() {
 function AnimatedLogo() {
     const { scrollYProgress } = useScroll();
     const threshold = 0.2;
-    const shiftBox = useTransform(scrollYProgress, [0, threshold], [250, 0]);
-    const shiftNe = useTransform(scrollYProgress, [0, threshold], [-205, -54]);
-    const shiftXus = useTransform(scrollYProgress, [0, threshold], [-95, -60]);
-    const shiftOX = useTransform(scrollYProgress, [0, threshold], [25, -39]);
-    const shiftOY = useTransform(scrollYProgress, [0, threshold], [-22, -18]);
-    const shiftVer = useTransform(scrollYProgress, [0, threshold], [100, -45]);
+    const shiftBox = useTransform(scrollYProgress, [0, threshold], [250, 500]);
+    const shiftNe = useTransform(scrollYProgress, [0, threshold], [-175, -44]);
+    const shiftXus = useTransform(scrollYProgress, [0, threshold], [-85, -60]);
+    const shiftO = useTransform(scrollYProgress, [0, threshold], [25, -29]);
+    const shiftVer = useTransform(scrollYProgress, [0, threshold], [83, -45]);
     const colorNe = useTransform(scrollYProgress, [0, threshold], ['#ffffff', '#000000']);
     const colorUsVer = useTransform(scrollYProgress, [0, threshold], ['#ffffffff', '#00000000']);
     const shadowNe = useTransform(
@@ -42,17 +43,17 @@ function AnimatedLogo() {
         ['0px 0px 0px #000000', '0px 0px 5px #ffffff']
     );
     return (
-        <ChakraBox position="sticky" top={7} style={{ translateY: shiftBox }} zIndex="docked">
+        <ChakraBox top={7} style={{ translateY: shiftBox }} zIndex="docked">
             <Link href="/">
                 <Box>
                     <ChakraBox
                         style={{
-                            translateX: shiftOX,
-                            translateY: shiftOY,
+                            translateX: shiftO,
+                            translateY: -10,
                         }}
                         position="absolute"
                         color="white"
-                        fontSize="8xl"
+                        fontSize="7xl"
                     >
                         O
                     </ChakraBox>
@@ -62,7 +63,7 @@ function AnimatedLogo() {
                             color: colorUsVer,
                         }}
                         position="absolute"
-                        fontSize="7xl"
+                        fontSize="6xl"
                     >
                         ver
                     </ChakraBox>
@@ -73,7 +74,7 @@ function AnimatedLogo() {
                             textShadow: shadowNe,
                         }}
                         position="absolute"
-                        fontSize="7xl"
+                        fontSize="6xl"
                     >
                         NE
                     </ChakraBox>
@@ -83,7 +84,7 @@ function AnimatedLogo() {
                             color: colorUsVer,
                         }}
                         position="absolute"
-                        fontSize="7xl"
+                        fontSize="6xl"
                     >
                         xus
                     </ChakraBox>

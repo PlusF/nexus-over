@@ -1,5 +1,4 @@
-import { Button, Text } from '@chakra-ui/react';
-
+import { Button } from '@chakra-ui/react';
 import { FiInstagram } from 'react-icons/fi';
 
 export default function InstagramButton(props: { url: string; backgroundColor?: string }) {
@@ -8,11 +7,14 @@ export default function InstagramButton(props: { url: string; backgroundColor?: 
     }
     const backgroundColor = props.backgroundColor || 'black';
     return (
-        <Button onClick={openInstagram} rounded="none" backgroundColor={backgroundColor}>
+        <Button
+            onClick={openInstagram}
+            rounded="3xl"
+            border="1px"
+            borderColor="white"
+            backgroundColor={backgroundColor}
+        >
             <FiInstagram color="white" />
-            <Text mr="1" color="white">
-                &rarr;
-            </Text>
         </Button>
     );
 }

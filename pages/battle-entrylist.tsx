@@ -1,8 +1,8 @@
 import { BattleEntryBox, WaitCancelBox } from '@/components/entrybox';
 import { Box, HStack, Heading, Spacer } from '@chakra-ui/react';
 
-import { BaseBox } from '@/components/box';
-import { BackLinkBox } from '@/components/linkbox';
+import { NeoBox } from '@/components/box';
+import { TopButton } from '@/components/button';
 import { NormalLogo } from '@/components/logo';
 import { BattleEntry } from '@prisma/client';
 
@@ -16,8 +16,7 @@ export default function BattleEntryList(props: EntryListProps) {
         <>
             <NormalLogo />
             <Box h={100}></Box>
-            <BaseBox>
-                <Heading mb="5">Battle Entry List</Heading>
+            <NeoBox title="Battle Entry List">
                 {props.battleEntries.map((entry: BattleEntry, i: number) => (
                     <>
                         {i === 65 && <WaitCancelBox />}
@@ -28,9 +27,9 @@ export default function BattleEntryList(props: EntryListProps) {
                     <Spacer />
                     <Heading fontSize="sm">以上{props.battleEntries.length}名</Heading>
                 </HStack>
-            </BaseBox>
+            </NeoBox>
             <Box h={50}></Box>
-            <BackLinkBox href="/entry" />
+            <TopButton />
         </>
     );
 }

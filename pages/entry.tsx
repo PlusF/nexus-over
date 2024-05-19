@@ -1,4 +1,4 @@
-import { BackLinkBox, BaseLinkBox } from '@/components/linkbox';
+import { RoundedButton, TopButton } from '@/components/button';
 import {
     Box,
     Button,
@@ -19,9 +19,9 @@ import {
 } from '@chakra-ui/react';
 import { Dispatch, SetStateAction, useState } from 'react';
 
-import { BaseBox } from '@/components/box';
-import Link from 'next/link';
+import { NeoBox } from '@/components/box';
 import { NormalLogo } from '@/components/logo';
+import Link from 'next/link';
 
 const generations = [...Array(46)].map((_, i) => String(i + 1));
 const genres = ['Hiphop', 'Pop', 'Lock', 'Breaking', 'House', 'Jazz', 'Waack', 'Freestyle'];
@@ -91,10 +91,11 @@ function SubmitButton(props: { text: string; onClick: () => void; isLoading?: bo
         <GridItem colSpan={2} textAlign="center" mt="5">
             <Button
                 size="lg"
-                colorScheme="black"
                 bg="black"
                 color="white"
-                rounded="unset"
+                rounded="2xl"
+                border="1px"
+                borderColor="white"
                 onClick={props.onClick}
                 isLoading={props.isLoading}
             >
@@ -129,7 +130,7 @@ function SuccessModal(props: {
                         href={props.href}
                         bg="black"
                         color="white"
-                        rounded="unset"
+                        rounded="2xl"
                     >
                         Entry List
                     </Button>
@@ -139,11 +140,11 @@ function SuccessModal(props: {
                         href={'/'}
                         bg="black"
                         color="white"
-                        rounded="unset"
+                        rounded="2xl"
                     >
                         Home
                     </Button>
-                    <Button mr={3} onClick={props.onClose} rounded="unset">
+                    <Button mr={3} onClick={props.onClose} rounded="2xl">
                         Close
                     </Button>
                 </ModalFooter>
@@ -162,7 +163,7 @@ function ErrorModal(props: { isOpen: boolean; onClose: () => void }) {
                 <ModalBody>未入力の項目があります。全ての項目を入力してください。</ModalBody>
 
                 <ModalFooter>
-                    <Button onClick={props.onClose} rounded="unset">
+                    <Button onClick={props.onClose} rounded="2xl">
                         Close
                     </Button>
                 </ModalFooter>
@@ -208,8 +209,7 @@ function BattleEntry() {
         }
     }
     return (
-        <BaseBox>
-            <Heading>Battle Entry</Heading>
+        <NeoBox title="Battle Entry">
             <Grid templateColumns="repeat(2, 1fr)" gridTemplateColumns={'100px 1fr'} gap="2" mt="5">
                 <EntrySelect title="代" options={generations} onChange={setGeneration} />
                 <EntrySelect title="ジャンル" options={genres} onChange={setGenre} />
@@ -226,7 +226,7 @@ function BattleEntry() {
                     <br />
                     ※5/25からキャンセル料が発生いたします。
                 </Description>
-                <SubmitButton text="Entry &rarr;" onClick={handleEntry} isLoading={isLoading} />
+                <SubmitButton text="Entry" onClick={handleEntry} isLoading={isLoading} />
             </Grid>
             <SuccessModal
                 isOpen={isOpenSuccess}
@@ -236,7 +236,7 @@ function BattleEntry() {
                 apply="エントリー"
             />
             <ErrorModal isOpen={isOpenError} onClose={onCloseError} />
-        </BaseBox>
+        </NeoBox>
     );
 }
 
@@ -278,8 +278,7 @@ function AudienceEntry() {
         }
     }
     return (
-        <BaseBox>
-            <Heading>観覧申込</Heading>
+        <NeoBox title="観覧申込">
             <Grid templateColumns="repeat(2, 1fr)" gridTemplateColumns={'100px 1fr'} gap="2" mt="5">
                 <EntrySelect title="代" options={generations} onChange={setGeneration} />
                 <EntrySelect title="ジャンル" options={limitedGenres} onChange={setGenre} />
@@ -295,7 +294,7 @@ function AudienceEntry() {
                     <br />
                     ※5/25からキャンセル料が発生いたします。
                 </Description>
-                <SubmitButton text="申込 &rarr;" onClick={handleEntry} isLoading={isLoading} />
+                <SubmitButton text="申込" onClick={handleEntry} isLoading={isLoading} />
             </Grid>
             <SuccessModal
                 isOpen={isOpenSuccess}
@@ -305,7 +304,7 @@ function AudienceEntry() {
                 apply="申込"
             />
             <ErrorModal isOpen={isOpenError} onClose={onCloseError} />
-        </BaseBox>
+        </NeoBox>
     );
 }
 
@@ -318,9 +317,11 @@ export default function Entry() {
                 <BattleEntry />
                 <AudienceEntry />
             </Box>
-            <BaseLinkBox href="/battle-entrylist" linkText="Battle Entry List &rarr;" />
-            <BaseLinkBox href="/audience-entrylist" linkText="観覧 Entry List &rarr;" />
-            <BackLinkBox />
+            <Box h={10}></Box>
+            <RoundedButton href="/battle-entrylist" linkText="Battle Entry List >" />
+            <Box h={10}></Box>
+            <RoundedButton href="/audience-entrylist" linkText="観覧 Entry List >" />
+            <TopButton />
         </>
     );
 }

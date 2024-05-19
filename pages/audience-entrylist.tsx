@@ -1,8 +1,8 @@
 import { AudienceEntryBox, WaitCancelBox } from '@/components/entrybox';
 import { Box, HStack, Heading, Spacer } from '@chakra-ui/react';
 
-import { BaseBox } from '@/components/box';
-import { BackLinkBox } from '@/components/linkbox';
+import { NeoBox } from '@/components/box';
+import { TopButton } from '@/components/button';
 import { NormalLogo } from '@/components/logo';
 import { AudienceEntry } from '@prisma/client';
 
@@ -16,8 +16,7 @@ export default function AudienceEntryList(props: EntryListProps) {
         <>
             <NormalLogo />
             <Box h={100}></Box>
-            <BaseBox>
-                <Heading mb="5">Audience List</Heading>
+            <NeoBox title="観覧 Entry List">
                 {props.audienceEntries.map((entry: AudienceEntry, i: number) => (
                     <>
                         {i === 20 && <WaitCancelBox />}
@@ -28,9 +27,9 @@ export default function AudienceEntryList(props: EntryListProps) {
                     <Spacer />
                     <Heading fontSize="sm">以上{props.audienceEntries.length}名</Heading>
                 </HStack>
-            </BaseBox>
+            </NeoBox>
             <Box h={50}></Box>
-            <BackLinkBox href="/entry" />
+            <TopButton />
         </>
     );
 }

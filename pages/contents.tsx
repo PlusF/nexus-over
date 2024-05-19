@@ -1,13 +1,12 @@
-import { BaseBox, SimpleMotionBox } from '@/components/box';
-import { Box, Center, Grid, GridItem, Heading, Img, Text } from '@chakra-ui/react';
+import { RoundedButtonRight, TopButton } from '@/components/button';
+import { Box, Center, Grid, GridItem, Img, Text } from '@chakra-ui/react';
 
-import { BackLinkBox } from '@/components/linkbox';
-import LinkButton from '@/components/linkbutton';
+import { NeoBox } from '@/components/box';
 import { NormalLogo } from '@/components/logo';
 
 function Showcase(props: { title: string; img: string; member: string[] }) {
     return (
-        <SimpleMotionBox title={props.title} titleSize="xl">
+        <NeoBox title={props.title} noBorder smaller>
             <Center>
                 <Grid templateColumns="66px 70px 80px">
                     {props.member.map((m, i) => (
@@ -18,7 +17,7 @@ function Showcase(props: { title: string; img: string; member: string[] }) {
                 </Grid>
             </Center>
             <Img src={props.img} alt="showcase2" mt="5px" />
-        </SimpleMotionBox>
+        </NeoBox>
     );
 }
 
@@ -28,20 +27,15 @@ export default function Contents() {
             <Box>
                 <NormalLogo />
                 <Box h={100}></Box>
-                <BaseBox>
-                    <Heading>Battle</Heading>
-                    <SimpleMotionBox title="予選サイファー" titleSize="xl">
+                <NeoBox title="Battle">
+                    <NeoBox title="予選サイファー" noBorder smaller>
                         <Text fontSize="md" px="2">
                             予選は10人程度のサイファー形式で行い、40秒1ムーブでジャッジに得点をつけてもらいます。
                         </Text>
-                        <LinkButton href="casts#judge">
-                            <Text mr="1" color="white" fontWeight="300">
-                                Judges &rarr;
-                            </Text>
-                        </LinkButton>
+                        <RoundedButtonRight href="casts#judge" linkText="Judges >" mt="2" />
                         <Img src="battle-rule1.png" alt="battle rule" mt="2" />
-                    </SimpleMotionBox>
-                    <SimpleMotionBox title="本戦トーナメント" titleSize="xl">
+                    </NeoBox>
+                    <NeoBox title="本戦トーナメント" noBorder smaller>
                         <Text fontSize="md" px="2">
                             本戦トーナメントの決定方法は以下の通りです。
                             <br />
@@ -55,21 +49,12 @@ export default function Contents() {
                             本戦はBEST8まで40秒1ムーブ、準決勝は45秒1ムーブ、決勝は45秒2ムーブです。
                             優勝者には賞金とウィナーボードが贈られます。
                         </Text>
-                        <LinkButton href="casts#gb">
-                            <Text mr="1" color="white" fontWeight="300">
-                                Guest battlers &rarr;
-                            </Text>
-                        </LinkButton>
+                        <RoundedButtonRight href="casts#gb" linkText="Guest battlers >" mt="2" />
                         <Img src="battle-rule2.png" alt="battle rule" mt="2" />
-                    </SimpleMotionBox>
-                    <LinkButton href="location#timetable">
-                        <Text mr="1" color="white" fontWeight="300">
-                            Time Table &rarr;
-                        </Text>
-                    </LinkButton>
-                </BaseBox>
-                <BaseBox>
-                    <Heading>Showcases</Heading>
+                    </NeoBox>
+                    <RoundedButtonRight href="location#timetable" linkText="Time Table >" />
+                </NeoBox>
+                <NeoBox title="Showcases">
                     <Showcase
                         title="WishTrain"
                         img="WishTrain.jpg"
@@ -136,15 +121,10 @@ export default function Contents() {
                         img="nifTy.jpg"
                         member={['45th', 'House', 'カラシ', '45th', 'House', 'ネコバス']}
                     />
-                    <LinkButton href="location#timetable">
-                        <Text mr="1" color="white" fontWeight="300">
-                            Time Table &rarr;
-                        </Text>
-                    </LinkButton>
-                </BaseBox>
-                <Box h={50}></Box>
+                    <RoundedButtonRight href="location#timetable" linkText="Time Table >" />
+                </NeoBox>
             </Box>
-            <BackLinkBox />
+            <TopButton />
         </>
     );
 }
