@@ -29,7 +29,7 @@ export default function AudienceEntryList(props: EntryListProps) {
                 </HStack>
             </NeoBox>
             <Box h={50}></Box>
-            <TopButton />
+            <TopButton href="entry" />
         </>
     );
 }

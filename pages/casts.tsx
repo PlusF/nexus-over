@@ -1,7 +1,7 @@
-import { HStack, Heading, Spacer } from '@chakra-ui/react';
+import { RoundedButtonRight, TopButton } from '@/components/button';
+import { Box, HStack, Heading, Spacer } from '@chakra-ui/react';
 
 import { NeoBox } from '@/components/box';
-import { TopButton } from '@/components/button';
 import InstagramButton from '@/components/instagram';
 import { NormalLogo } from '@/components/logo';
 import { Img } from '@chakra-ui/react';
@@ -75,6 +75,10 @@ export default function Casts() {
                     instagram="https://www.instagram.com/mas_koma/"
                 />
             </NeoBox>
+            <Box h={30}></Box>
+            <RoundedButtonRight href="timetable">Time Table &gt;</RoundedButtonRight>
+            <Box h={30}></Box>
+            <RoundedButtonRight href="contents">Contents &gt;</RoundedButtonRight>
             <TopButton />
         </>
     );

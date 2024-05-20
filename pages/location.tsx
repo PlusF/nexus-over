@@ -1,9 +1,8 @@
 import { RoundedButtonRight, TopButton } from '@/components/button';
-import { AspectRatio, Box, Center, Heading, Text, VStack } from '@chakra-ui/react';
+import { AspectRatio, Box, Heading, Text } from '@chakra-ui/react';
 
 import { NeoBox } from '@/components/box';
 import { NormalLogo } from '@/components/logo';
-import { TimeTableBox } from '@/components/timetablebox';
 
 export default function Location() {
     return (
@@ -30,34 +29,14 @@ export default function Location() {
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.6685306753207!2d139.73802939880613!3d35.66053747795626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b9971fe6bad%3A0x450f201f19acce43!2z5YWt5pys5pyoQ1VCRQ!5e0!3m2!1sja!2sjp!4v1707538052199!5m2!1sja!2sjp"
                         width="600"
-                        height="450"
                         loading="lazy"
                     ></iframe>
                 </AspectRatio>
             </NeoBox>
-            <NeoBox title="Time Table">
-                <Heading id="timetable" fontSize="xl" m="2">
-                    <Center>2024/6/1(Sat.)</Center>
-                </Heading>
-                <Center>
-                    <VStack>
-                        <TimeTableBox time="13:00" content="Open&受付開始" />
-                        <TimeTableBox time="13:45" content="Start" />
-                        <TimeTableBox time="13:55" content="Showcase①" />
-                        <TimeTableBox time="14:20" content="Battle予選" />
-                        <TimeTableBox time="16:00" content="Showcase②" />
-                        <TimeTableBox time="16:15" content="Wild Card Battle" />
-                        <TimeTableBox time="16:30" content="Best16" />
-                        <TimeTableBox time="17:00" content="Showcase③" />
-                        <TimeTableBox time="17:15" content="Best8" />
-                        <TimeTableBox time="17:40" content="Judge Move" />
-                        <TimeTableBox time="18:00" content="BEST4~" />
-                        <TimeTableBox time="18:50" content="DJ Time" />
-                        <TimeTableBox time="19:30" content="Close" />
-                    </VStack>
-                </Center>
-                <RoundedButtonRight href="contents">Contents &gt;</RoundedButtonRight>
-            </NeoBox>
+            <Box h={30}></Box>
+            <RoundedButtonRight href="timetable">Time Table &gt;</RoundedButtonRight>
+            <Box h={30}></Box>
+            <RoundedButtonRight href="contents">Contents &gt;</RoundedButtonRight>
             <TopButton />
         </>
     );

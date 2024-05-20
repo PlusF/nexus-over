@@ -29,7 +29,7 @@ export default function BattleEntryList(props: EntryListProps) {
                 </HStack>
             </NeoBox>
             <Box h={50}></Box>
-            <TopButton />
+            <TopButton href="entry" />
         </>
     );
 }

@@ -30,11 +30,11 @@ export default function Home() {
                 <Heading fontSize="md" mt="2">
                     六本木CUBE
                 </Heading>
-                <Heading fontSize="md">2024/6/1(Sat.)</Heading>
-                <Box fontSize="sm" mt="2">
-                    タイムテーブルもこちらから
-                </Box>
                 <Img src="cube.jpg" alt="cube" mt="3" />
+            </NeoBoxWithButton>
+
+            <NeoBoxWithButton href="/timetable" title="Time Table">
+                <Heading fontSize="md">2024/6/1(Sat.)</Heading>
             </NeoBoxWithButton>
 
             <NeoBoxWithButton href="/casts" title="Casts">
