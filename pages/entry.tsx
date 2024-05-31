@@ -1,4 +1,3 @@
-import { RoundedButton, TopButton } from '@/components/button';
 import {
     Box,
     Button,
@@ -18,10 +17,11 @@ import {
     useDisclosure,
 } from '@chakra-ui/react';
 import { Dispatch, SetStateAction, useState } from 'react';
+import { RoundedButton, TopButton } from '@/components/button';
 
+import Link from 'next/link';
 import { NeoBox } from '@/components/box';
 import { NormalLogo } from '@/components/logo';
-import Link from 'next/link';
 
 const generations = [...Array(46)].map((_, i) => String(i + 1));
 const genres = ['Hiphop', 'Pop', 'Lock', 'Breaking', 'House', 'Jazz', 'Waack', 'Freestyle'];
@@ -314,7 +314,7 @@ export default function Entry() {
             <Box>
                 <NormalLogo />
                 <Box h={100}></Box>
-                <BattleEntry />
+                {/* <BattleEntry /> */}
                 <AudienceEntry />
             </Box>
             <Box h={10}></Box>
