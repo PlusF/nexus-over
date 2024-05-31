@@ -18,12 +18,12 @@ export default function Timetable() {
                     <VStack>
                         <TimeTableBox time="13:00" content="Open&受付開始" />
                         <TimeTableBox time="13:45" content="Start" />
-                        <TimeTableBox time="13:55" content="Showcase①" />
-                        <TimeTableBox time="14:20" content="Battle予選" />
+                        <TimeTableBox time="14:00" content="Showcase①" />
+                        <TimeTableBox time="14:15" content="Battle予選" />
                         <TimeTableBox time="16:00" content="Showcase②" />
-                        <TimeTableBox time="16:15" content="Wild Card Battle" />
-                        <TimeTableBox time="16:30" content="Best16" />
-                        <TimeTableBox time="17:00" content="Showcase③" />
+                        <TimeTableBox time="16:20" content="Wild Card Battle" />
+                        <TimeTableBox time="16:35" content="Best16" />
+                        <TimeTableBox time="17:05" content="Showcase③" />
                         <TimeTableBox time="17:15" content="Best8" />
                         <TimeTableBox time="17:40" content="Judge Move" />
                         <TimeTableBox time="18:00" content="BEST4~" />
